@@ -205,3 +205,40 @@
         }
       }
     }, { passive: true });
+
+    // ===== MOBILE MENU TOGGLE =====
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = navToggle.querySelector('i');
+        if (icon) {
+          if (navLinks.classList.contains('active')) {
+            icon.className = 'fa-solid fa-xmark';
+          } else {
+            icon.className = 'fa-solid fa-bars';
+          }
+        }
+      });
+
+      // Close menu when a link inside is clicked
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          const icon = navToggle.querySelector('i');
+          if (icon) icon.className = 'fa-solid fa-bars';
+        });
+      });
+
+      // Close menu when clicking outside of it
+      document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+          navLinks.classList.remove('active');
+          const icon = navToggle.querySelector('i');
+          if (icon) icon.className = 'fa-solid fa-bars';
+        }
+      });
+    }
