@@ -35,7 +35,7 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
+  overflow-x: clip;
   line-height: 1.6;
   cursor: none;
 }
@@ -255,7 +255,7 @@ nav {
 .wrapper {
   position: relative;
   z-index: 1;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ===== HERO ===== */
@@ -777,7 +777,11 @@ nav {
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   margin-bottom: 80px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.proj-stack-card.reveal.visible {
+  transform: none !important;
 }
 
 .proj-stack-card:hover {
@@ -1556,6 +1560,47 @@ footer {
   transform: scale(1.15);
 }
 
+/* ===== MOBILE HORIZONTAL SCROLL UTILITY ===== */
+@media(max-width: 767px) {
+  .mobile-horizontal-scroll {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 24px !important;
+    margin-left: -24px !important;
+    margin-right: -24px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    gap: 16px !important;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  }
+
+  .mobile-horizontal-scroll::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari/Opera */
+  }
+
+  .mobile-horizontal-scroll > .col,
+  .mobile-horizontal-scroll > [class*="col-"] {
+    flex: 0 0 82% !important;
+    max-width: 82% !important;
+    width: 82% !important;
+    scroll-snap-align: start;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Smooth reveal behavior overrides for horizontal scrolling */
+  .mobile-horizontal-scroll .reveal,
+  .mobile-horizontal-scroll .reveal-left,
+  .mobile-horizontal-scroll .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
 
 @media(prefers-reduced-motion:reduce) {
   * {
