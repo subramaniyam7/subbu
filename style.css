@@ -147,8 +147,9 @@ textarea {
 nav {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   z-index: 200;
   display: flex;
   align-items: center;
@@ -158,7 +159,26 @@ nav {
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border2);
-  transition: padding 0.3s;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Scrolled state for navbar */
+nav.scrolled {
+  padding: 12px 60px;
+  background: rgba(7, 7, 15, 0.85);
+}
+
+/* Desktop-specific scrolled style (width reduction, floating capsule) */
+@media (min-width: 901px) {
+  nav.scrolled {
+    top: 20px;
+    width: 90%;
+    max-width: 1080px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(124, 92, 252, 0.15);
+    padding: 10px 40px;
+  }
 }
 
 .nav-logo {
@@ -1281,6 +1301,10 @@ footer {
 
   nav {
     padding: 14px 24px;
+  }
+
+  nav.scrolled {
+    padding: 10px 24px;
   }
 
   .nav-toggle {

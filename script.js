@@ -60,11 +60,15 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => observer.observe(el));
 
-    // ===== NAV SHRINK =====
+    // ===== NAV SCROLL STATE =====
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
       if (!nav) return;
-      nav.style.padding = window.scrollY > 60 ? '12px 60px' : '16px 60px';
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
     }, { passive: true });
 
     // ===== PROFILE IMAGE ZOOM-IN ON LOAD =====
