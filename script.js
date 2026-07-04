@@ -61,10 +61,24 @@
     revealEls.forEach(el => observer.observe(el));
 
     // ===== NAV SCROLL STATE =====
+    let skillsOffset = 0;
+    const updateSkillsOffset = () => {
+      const skillsSec = document.getElementById('skills');
+      if (skillsSec) {
+        skillsOffset = skillsSec.offsetTop;
+      }
+    };
+    window.addEventListener('load', updateSkillsOffset);
+    window.addEventListener('resize', updateSkillsOffset);
+    updateSkillsOffset();
+
     window.addEventListener('scroll', () => {
       const nav = document.querySelector('nav');
       if (!nav) return;
-      if (window.scrollY > 60) {
+      
+      const triggerPoint = skillsOffset > 0 ? skillsOffset - 120 : 20;
+      
+      if (window.scrollY >= triggerPoint) {
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');

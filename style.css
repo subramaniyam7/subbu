@@ -172,8 +172,8 @@ nav.scrolled {
 @media (min-width: 901px) {
   nav.scrolled {
     top: 20px;
-    width: 90%;
-    max-width: 1080px;
+    width: 80%;
+    max-width: 1200px;
     border: 1px solid var(--border);
     border-radius: 100px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(124, 92, 252, 0.15);
