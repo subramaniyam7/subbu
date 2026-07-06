@@ -86,72 +86,72 @@
     <section class="hero container-fluid px-md-5" id="hero">
       <div class="d-flex flex-column align-items-center text-center w-100 py-5">
 
-        <!-- HERO HEADER GROUP (Background layer) -->
-        <div class="hero-header-group">
-          <!-- <div class="hero-badge reveal">
-            <div class="pulse"></div> Open to opportunities
-          </div> -->
-          <h1 class="reveal">
-            Hi, I'm<br>
-            <span class="name">Subramaniyam M</span>
-          </h1>
-        </div>
+        <!-- HERO BANNER WRAPPER (Centers text and image together) -->
+        <div class="hero-banner-layout reveal">
+          <!-- HERO HEADER GROUP (Background layer) -->
+          <div class="hero-header-group">
+            <h1>
+              Hi, I'm<br>
+              <span class="name">Subramaniyam M</span>
+            </h1>
+          </div>
 
-        <!-- HERO IMAGE GROUP (Foreground layer, overlays title) -->
-        <div class="hero-image-group">
-          <div class="hero-visual-wrapper" id="heroVisualWrapper">
+          <!-- HERO IMAGE GROUP (Foreground layer, overlays title) -->
+          <div class="hero-image-group">
+            <div class="hero-visual-wrapper" id="heroVisualWrapper">
 
-            <!-- BULB BEHIND IMAGE (low opacity, glows on scroll) -->
-            <div class="hero-bulb-container" id="heroBulbContainer">
-              <div class="hero-bulb-glow-back" id="bulbGlowBack"></div>
-              <svg id="heroBulb" viewBox="0 0 100 150" class="hero-bulb-svg" width="220" height="330">
-                <defs>
-                  <filter id="glowFilament" x="-80%" y="-80%" width="260%" height="260%">
-                    <feGaussianBlur stdDeviation="1.5" result="blur1" />
-                    <feGaussianBlur stdDeviation="4" result="blur2" />
-                    <feMerge>
-                      <feMergeNode in="blur2" />
-                      <feMergeNode in="blur1" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                  <filter id="glowGlass" x="-60%" y="-60%" width="220%" height="220%">
-                    <feGaussianBlur stdDeviation="6" result="blur" />
-                    <feComponentTransfer in="blur" result="glow">
-                      <feFuncA type="linear" slope="0.5" />
-                    </feComponentTransfer>
-                    <feMerge>
-                      <feMergeNode in="glow" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-                <!-- glass globe -->
-                <circle cx="50" cy="60" r="34" fill="rgba(251,191,36,0.06)" filter="url(#glowGlass)"
-                  class="bulb-glow-circle" />
-                <!-- wire leads -->
-                <path d="M 43 93 L 46 70 M 57 93 L 54 70" stroke="rgba(200,160,60,0.6)" stroke-width="1.5"
-                  fill="none" />
-                <!-- filament coil -->
-                <path id="bulbFilament" d="M 46 70 C 46 57 50 52 50 48 C 50 52 54 57 54 70" stroke="#c8a020"
-                  stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glowFilament)" />
-                <!-- outer glass shape -->
-                <path
-                  d="M 32 86 C 12 76 12 31 50 31 C 88 31 88 76 68 86 C 63 96 60 107 60 114 L 40 114 C 40 107 37 96 32 86 Z"
-                  fill="rgba(255,255,220,0.04)" stroke="rgba(200,160,60,0.5)" stroke-width="1.5" />
-                <!-- base plates -->
-                <path d="M 39 114 L 61 114 M 40 119 L 60 119 M 41 124 L 59 124 M 43 129 L 57 129" stroke="#555"
-                  stroke-width="2.5" stroke-linecap="round" />
-                <!-- base cap -->
-                <path d="M 44 129 C 44 135 56 135 56 129 Z" fill="#3a3a3a" />
-              </svg>
+              <!-- BULB BEHIND IMAGE (low opacity, glows on scroll) -->
+              <div class="hero-bulb-container" id="heroBulbContainer">
+                <div class="hero-bulb-glow-back" id="bulbGlowBack"></div>
+                <svg id="heroBulb" viewBox="0 0 100 150" class="hero-bulb-svg" width="220" height="330">
+                  <defs>
+                    <filter id="glowFilament" x="-80%" y="-80%" width="260%" height="260%">
+                      <feGaussianBlur stdDeviation="1.5" result="blur1" />
+                      <feGaussianBlur stdDeviation="4" result="blur2" />
+                      <feMerge>
+                        <feMergeNode in="blur2" />
+                        <feMergeNode in="blur1" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                    <filter id="glowGlass" x="-60%" y="-60%" width="220%" height="220%">
+                      <feGaussianBlur stdDeviation="6" result="blur" />
+                      <feComponentTransfer in="blur" result="glow">
+                        <feFuncA type="linear" slope="0.5" />
+                      </feComponentTransfer>
+                      <feMerge>
+                        <feMergeNode in="glow" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <!-- glass globe -->
+                  <circle cx="50" cy="60" r="34" fill="rgba(251,191,36,0.06)" filter="url(#glowGlass)"
+                    class="bulb-glow-circle" />
+                  <!-- wire leads -->
+                  <path d="M 43 93 L 46 70 M 57 93 L 54 70" stroke="rgba(200,160,60,0.6)" stroke-width="1.5"
+                    fill="none" />
+                  <!-- filament coil -->
+                  <path id="bulbFilament" d="M 46 70 C 46 57 50 52 50 48 C 50 52 54 57 54 70" stroke="#c8a020"
+                    stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glowFilament)" />
+                  <!-- outer glass shape -->
+                  <path
+                    d="M 32 86 C 12 76 12 31 50 31 C 88 31 88 76 68 86 C 63 96 60 107 60 114 L 40 114 C 40 107 37 96 32 86 Z"
+                    fill="rgba(255,255,220,0.04)" stroke="rgba(200,160,60,0.5)" stroke-width="1.5" />
+                  <!-- base plates -->
+                  <path d="M 39 114 L 61 114 M 40 119 L 60 119 M 41 124 L 59 124 M 43 129 L 57 129" stroke="#555"
+                    stroke-width="2.5" stroke-linecap="round" />
+                  <!-- base cap -->
+                  <path d="M 44 129 C 44 135 56 135 56 129 Z" fill="#3a3a3a" />
+                </svg>
+              </div>
+
+              <!-- PROFILE PHOTO on top of bulb -->
+              <div class="hero-profile-img-wrap" id="heroProfileImg">
+                <img src="images/subramaniyam_standing.png" alt="Subramaniyam M — UI/UX Designer" id="profilePhoto" />
+              </div>
+
             </div>
-
-            <!-- PROFILE PHOTO on top of bulb -->
-            <div class="hero-profile-img-wrap" id="heroProfileImg">
-              <img src="images/subramaniyam_standing.png" alt="Subramaniyam M — UI/UX Designer" id="profilePhoto" />
-            </div>
-
           </div>
         </div>
 
