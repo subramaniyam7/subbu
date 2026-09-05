@@ -260,3 +260,125 @@
         }
       });
     }
+
+    // ===== RESUME MODAL & POPUP FUNCTIONALITY =====
+    const resumeModal = document.getElementById('resumeModal');
+    const closeResumeBtn = document.getElementById('closeResumeBtn');
+    const closeResumeBackdrop = document.getElementById('closeResumeBackdrop');
+    const downloadResumeBtn = document.getElementById('downloadResumeBtn');
+    const resumePrintBtn = document.getElementById('resumePrintBtn');
+    const resumeZoomIn = document.getElementById('resumeZoomIn');
+    const resumeZoomOut = document.getElementById('resumeZoomOut');
+    const zoomLevelVal = document.getElementById('zoomLevelVal');
+    const resumeDocumentWrapper = document.getElementById('resumeDocumentWrapper');
+
+    let currentZoom = 1.0;
+
+    function openResumeModal() {
+      if (!resumeModal) return;
+      resumeModal.classList.add('active');
+      resumeModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      currentZoom = 1.0;
+      updateZoom();
+    }
+
+    function closeResumeModal() {
+      if (!resumeModal) return;
+      resumeModal.classList.remove('active');
+      resumeModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function updateZoom() {
+      if (resumeDocumentWrapper) {
+        resumeDocumentWrapper.style.transform = `scale(${currentZoom})`;
+      }
+      if (zoomLevelVal) {
+        zoomLevelVal.textContent = `${Math.round(currentZoom * 100)}%`;
+      }
+    }
+
+    // Attach open triggers
+    document.querySelectorAll('.open-resume-trigger').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openResumeModal();
+      });
+    });
+
+    // Close listeners
+    if (closeResumeBtn) closeResumeBtn.addEventListener('click', closeResumeModal);
+    if (closeResumeBackdrop) closeResumeBackdrop.addEventListener('click', closeResumeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && resumeModal && resumeModal.classList.contains('active')) {
+        closeResumeModal();
+      }
+    });
+
+    // Zoom handlers
+    if (resumeZoomIn) {
+      resumeZoomIn.addEventListener('click', () => {
+        if (currentZoom < 1.5) {
+          currentZoom += 0.1;
+          updateZoom();
+        }
+      });
+    }
+
+    if (resumeZoomOut) {
+      resumeZoomOut.addEventListener('click', () => {
+        if (currentZoom > 0.7) {
+          currentZoom -= 0.1;
+          updateZoom();
+        }
+      });
+    }
+
+    // Print handler
+    if (resumePrintBtn) {
+      resumePrintBtn.addEventListener('click', () => {
+        window.print();
+      });
+    }
+
+    // Download PDF handler
+    if (downloadResumeBtn) {
+      downloadResumeBtn.addEventListener('click', () => {
+        const originalText = downloadResumeBtn.innerHTML;
+        downloadResumeBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-1"></i> Generating...';
+        downloadResumeBtn.style.pointerEvents = 'none';
+
+        const element = document.getElementById('resumeDocumentWrapper');
+        const opt = {
+          margin:       [0.2, 0.2, 0.2, 0.2],
+          filename:     'Subramaniyam_M_Resume.pdf',
+          image:        { type: 'jpeg', quality: 0.98 },
+          html2canvas:  { scale: 2, useCORS: true, letterRendering: true, logging: false },
+          jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+
+        if (window.html2pdf) {
+          html2pdf().set(opt).from(element).save().then(() => {
+            downloadResumeBtn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Downloaded!';
+            setTimeout(() => {
+              downloadResumeBtn.innerHTML = originalText;
+              downloadResumeBtn.style.pointerEvents = 'auto';
+            }, 2200);
+          }).catch(err => {
+            console.error('PDF generation error:', err);
+            window.print();
+            downloadResumeBtn.innerHTML = originalText;
+            downloadResumeBtn.style.pointerEvents = 'auto';
+          });
+        } else {
+          window.print();
+          downloadResumeBtn.innerHTML = originalText;
+          downloadResumeBtn.style.pointerEvents = 'auto';
+        }
+      });
+    }
+
+    // Re-apply cursor styles to newly created buttons
+    document.querySelectorAll('a,button,input,select,textarea,[role="button"],.open-resume-trigger').forEach(el => el.style.cursor = 'none');

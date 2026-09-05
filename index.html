@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Subramaniyam M — UI/UX Designer</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
     rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css?v=3" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
@@ -158,7 +159,7 @@
         <!-- HERO BODY GROUP -->
         <div class="hero-body-group">
           <p class="hero-role reveal">UI/UX Designer <span class="highlight"></span></p>
-          <p class="hero-exp reveal">✦ 2.5 Years of hands-on experience</p>
+          <p class="hero-exp reveal">✦ 3+ Years of hands-on experience</p>
           <p class="hero-desc reveal">
             Results-driven designer crafting intuitive digital products across web and mobile — from user research and
             wireframing to high-fidelity prototyping and front-end implementation. Delivering polished,
@@ -166,11 +167,13 @@
           </p>
           <div class="hero-actions reveal">
             <a href="#projects" class="btn-primary">View my work</a>
+            <button type="button" class="btn-ghost open-resume-trigger" id="heroResumeBtn"><i
+                class="fa-solid fa-file-pdf" style="color:var(--accent2);margin-right:8px;"></i>View Resume</button>
             <a href="mailto:subramaniyam3.m@gmail.com" class="btn-ghost">Get in touch</a>
           </div>
           <div class="hero-stats reveal">
             <div class="stat-item">
-              <div class="stat-num">2.5<span>yrs</span></div>
+              <div class="stat-num">3+<span>yrs</span></div>
               <div class="stat-lbl">Experience</div>
             </div>
             <div class="stat-item">
@@ -701,6 +704,302 @@
       </div>
     </section>
 
+  </div>
+
+  <!-- STICKY RESUME BUTTON (Fixed Bottom Right Corner) -->
+  <div class="sticky-resume-wrapper" id="stickyResume">
+    <button type="button" class="btn-sticky-resume open-resume-trigger" id="openResumeStickyBtn"
+      aria-label="Open Resume Popup">
+      <div class="sticky-resume-icon">
+        <i class="fa-solid fa-file-pdf"></i>
+      </div>
+      <span class="sticky-resume-text">Resume</span>
+      <span class="sticky-resume-badge">PDF</span>
+      <div class="sticky-resume-pulse"></div>
+    </button>
+  </div>
+
+  <!-- RESUME MODAL POPUP -->
+  <div class="resume-modal-overlay" id="resumeModal" aria-hidden="true">
+    <div class="resume-modal-backdrop" id="closeResumeBackdrop"></div>
+    <div class="resume-modal-container">
+
+      <!-- Modal Header -->
+      <div class="resume-modal-header">
+        <div class="resume-modal-title">
+          <i class="fa-solid fa-file-lines text-accent me-2"></i>
+          <span class="doc-name">Subramaniyam_M_Resume.pdf</span>
+          <span class="doc-tag">2.7 Yrs Exp</span>
+        </div>
+        <div class="resume-modal-controls">
+          <div class="zoom-controls">
+            <button type="button" class="ctrl-btn" id="resumeZoomOut" title="Zoom Out"><i
+                class="fa-solid fa-minus"></i></button>
+            <span class="zoom-level" id="zoomLevelVal">100%</span>
+            <button type="button" class="ctrl-btn" id="resumeZoomIn" title="Zoom In"><i
+                class="fa-solid fa-plus"></i></button>
+          </div>
+          <button type="button" class="ctrl-btn btn-print-ctrl" id="resumePrintBtn" title="Print Resume">
+            <i class="fa-solid fa-print me-1"></i> Print
+          </button>
+          <button type="button" class="btn-primary btn-download-resume" id="downloadResumeBtn"
+            title="Download PDF Resume">
+            <i class="fa-solid fa-download me-1"></i> Download PDF
+          </button>
+          <button type="button" class="ctrl-btn btn-close-ctrl" id="closeResumeBtn" aria-label="Close modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Paper Viewer) -->
+      <div class="resume-modal-body" id="resumeModalBody">
+        <div class="resume-paper-wrapper" id="resumeDocumentWrapper">
+
+          <!-- PAGE 1 -->
+          <div class="resume-paper-page" id="resumePage1">
+            <div class="rp-hdr">
+              <h1 class="rp-main-name">Subramaniyam M</h1>
+              <div class="rp-sub-title">UI/UX Designer | Graphic Designer | 2.7 Years of Experience</div>
+              <div class="rp-contacts">
+                <span><i class="fa-solid fa-phone"></i> +91 86673 52542</span>
+                <span class="dot">•</span>
+                <span><i class="fa-solid fa-envelope"></i> subramaniyam3.m@gmail.com</span>
+                <span class="dot">•</span>
+                <span><i class="fa-brands fa-linkedin"></i> linkedin-profile</span>
+                <span class="dot">•</span>
+                <span><i class="fa-brands fa-behance"></i> Behance-profile</span>
+              </div>
+            </div>
+
+            <div class="rp-divider"></div>
+
+            <div class="rp-sec">
+              <h2 class="rp-heading">PROFESSIONAL SUMMARY</h2>
+              <div class="rp-sec-border"></div>
+              <p class="rp-body-text">
+                Results-driven UI/UX Designer and Web Designer with 2.7 years of hands-on experience designing and
+                developing intuitive digital products across web and mobile platforms. Proven expertise in end-to-end
+                design and development workflows — from user research, wireframing, and high-fidelity prototyping to
+                front-end implementation of responsive websites. Delivered diverse web projects including e-commerce
+                stores, SaaS landing pages, hotel table booking systems, CRM dashboards, Document Management Systems
+                (DMS),
+                Transport Management Systems (TMS), and AI-powered platforms. Adept at collaborating with
+                cross-functional
+                teams in agile environments, consistently balancing business goals, brand identity, and user-centered
+                design
+                principles to ship polished, conversion-focused digital experiences.
+              </p>
+            </div>
+
+            <div class="rp-sec">
+              <h2 class="rp-heading">WORK EXPERIENCE</h2>
+              <div class="rp-sec-border"></div>
+
+              <div class="rp-job-block">
+                <div class="rp-job-row">
+                  <div>
+                    <strong class="rp-role-title">UI/UX Designer</strong>
+                    <span class="rp-company-name">Turbocode Technology</span>
+                  </div>
+                  <span class="rp-date-badge">Jun 2025 – Aug 2026</span>
+                </div>
+                <ul class="rp-list">
+                  <li>Designed end-to-end UX for a Transport Management System (TMS) covering both mobile and web
+                    platforms — including shipment tracking, driver management, route planning, and logistics reporting
+                    dashboards.</li>
+                  <li>Architected information structures, navigation flows, and interaction models for a Document
+                    Management System (DMS), streamlining document access and workflow approvals.</li>
+                  <li>Designed CRM dashboards with a focus on data clarity, KPI visualization, and responsive layouts
+                    optimized for web and mobile.</li>
+                  <li>Produced high-fidelity Figma prototypes and developer-ready design specifications, reducing
+                    back-and-forth during the handoff phase.</li>
+                  <li>Conducted heuristic evaluations and usability reviews to identify friction points and propose
+                    actionable, measurable design improvements.</li>
+                </ul>
+              </div>
+
+              <div class="rp-job-block">
+                <div class="rp-job-row">
+                  <div>
+                    <strong class="rp-role-title">UI/UX Designer</strong>
+                    <span class="rp-company-name">Embark Interactive</span>
+                  </div>
+                  <span class="rp-date-badge">Feb 2024 – Jun 2025</span>
+                </div>
+                <ul class="rp-list">
+                  <li>Led UX and UI design for a Student AI-Enhanced Job Searching Platform — a smart job-matching
+                    product leveraging AI to surface personalized career opportunities for students; designed onboarding
+                    flows, job feed UI, profile builder, and recommendation interfaces.</li>
+                  <li>Collaborated with product managers, engineers, and stakeholders to translate requirements into
+                    wireframes, user flows, and interactive prototypes for web and mobile applications.</li>
+                  <li>Created comprehensive visual identity assets including logos, iconography, infographics, and
+                    social media creatives, maintaining brand consistency across 10+ client projects.</li>
+                  <li>Designed and edited video content for marketing campaigns and company presentations, contributing
+                    to improved viewer engagement and brand visibility.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rp-footer-no">Page 1 of 3</div>
+          </div>
+
+          <!-- PAGE 2 -->
+          <div class="resume-paper-page" id="resumePage2">
+            <div class="rp-sec">
+              <ul class="rp-list" style="margin-top:0;">
+                <li>Designed and developed multiple client websites including e-commerce stores, SaaS landing pages,
+                  hotel table booking platforms, and business portfolio sites — handling both UI design in Figma and
+                  front-end development using HTML, CSS, and JavaScript.</li>
+                <li>Participated in regular design critique sessions, incorporating iterative feedback to continuously
+                  refine interface quality.</li>
+              </ul>
+
+              <div class="rp-job-block" style="margin-top:16px;">
+                <div class="rp-job-row">
+                  <div>
+                    <strong class="rp-role-title">Process Associate</strong>
+                    <span class="rp-company-name">Solartis Technologies</span>
+                  </div>
+                  <span class="rp-date-badge">Oct 2021 – Mar 2023</span>
+                </div>
+                <ul class="rp-list">
+                  <li>Managed structured communication channels with client-side operations teams, ensuring timely
+                    resolution of queries and escalations.</li>
+                  <li>Handled query management for customer service operations, maintaining SLAs and fostering positive
+                    client relationships.</li>
+                  <li>Monitored end-to-end workflow pipelines to identify bottlenecks and contribute to process
+                    optimization initiatives.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rp-sec">
+              <h2 class="rp-heading">KEY PROJECTS</h2>
+              <div class="rp-sec-border"></div>
+
+              <div class="rp-proj-card">
+                <div class="rp-proj-head">Transport Management System (TMS) — Web &amp; Mobile</div>
+                <p class="rp-proj-desc">Full-cycle UI/UX design for a logistics TMS covering shipment tracking, driver
+                  management, route optimization, and real-time reporting dashboards for both web and mobile platforms.
+                </p>
+              </div>
+
+              <div class="rp-proj-card">
+                <div class="rp-proj-head">Student AI-Enhanced Job Searching Platform</div>
+                <p class="rp-proj-desc">Designed the complete user experience for an AI-powered career platform for
+                  students — including smart job-matching feeds, personalized recommendation UI, profile builder, and
+                  application tracking interfaces.</p>
+              </div>
+
+              <div class="rp-proj-card">
+                <div class="rp-proj-head">CRM Dashboard &amp; Document Management System (DMS)</div>
+                <p class="rp-proj-desc">Designed data-rich CRM dashboards for customer pipeline and KPI management,
+                  alongside a DMS platform with document upload flows, version control UI, and role-based access views.
+                </p>
+              </div>
+
+              <div class="rp-proj-card">
+                <div class="rp-proj-head">E-Commerce Website — Design &amp; Development</div>
+                <p class="rp-proj-desc">Designed and developed a fully responsive e-commerce website with product
+                  catalog, category filters, product detail pages, shopping cart, and checkout flow. Focused on
+                  conversion-optimized UI, fast-loading layouts, and a seamless mobile shopping experience.</p>
+              </div>
+
+              <div class="rp-proj-card">
+                <div class="rp-proj-head">SaaS Landing Page — Design &amp; Development</div>
+                <p class="rp-proj-desc">Created high-converting SaaS landing pages with clear value propositions,
+                  feature sections, pricing tables, testimonials, and CTA-focused layouts. Built with HTML, CSS, and
+                  JavaScript ensuring pixel-perfect, responsive implementation across all screen sizes.</p>
+              </div>
+
+              <div class="rp-proj-card">
+                <div class="rp-proj-head">Hotel Table Booking Website — Design &amp; Development</div>
+                <p class="rp-proj-desc">Designed and developed a hospitality website featuring restaurant table
+                  reservation functionality, menu showcase, gallery, and location pages. Prioritized elegant visual
+                  design, smooth booking UX, and mobile-first responsiveness for end-users.</p>
+              </div>
+            </div>
+
+            <div class="rp-footer-no">Page 2 of 3</div>
+          </div>
+
+          <!-- PAGE 3 -->
+          <div class="resume-paper-page" id="resumePage3">
+            <div class="rp-sec">
+              <h2 class="rp-heading">SKILLS</h2>
+              <div class="rp-sec-border"></div>
+
+              <div class="rp-skill-row">
+                <span class="rp-skill-cat">UX Design:</span>
+                <span class="rp-skill-items">User Research, Wireframing, Prototyping, User Flows, Information
+                  Architecture, Interaction Design, Usability Testing, Heuristic Evaluation</span>
+              </div>
+
+              <div class="rp-skill-row">
+                <span class="rp-skill-cat">Visual &amp; Graphic Design:</span>
+                <span class="rp-skill-items">UI Design, Brand Identity, Logo Design, Infographic Design, Social Media
+                  Graphics, Motion Graphics, Video Editing</span>
+              </div>
+
+              <div class="rp-skill-row">
+                <span class="rp-skill-cat">Design Tools:</span>
+                <span class="rp-skill-items">Figma, Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe
+                  Premiere Pro</span>
+              </div>
+
+              <div class="rp-skill-row">
+                <span class="rp-skill-cat">Website Design &amp; Development:</span>
+                <span class="rp-skill-items">Responsive Web Design, E-Commerce Website Design, SaaS Landing Pages, Hotel
+                  &amp; Hospitality Websites, Booking System UI, Conversion-Optimized Design, HTML5, CSS3, JavaScript,
+                  Angular Framework</span>
+              </div>
+
+              <div class="rp-skill-row">
+                <span class="rp-skill-cat">Methodologies:</span>
+                <span class="rp-skill-items">Agile / Scrum, Design Systems, Component Libraries, Design Handoff</span>
+              </div>
+
+              <div class="rp-skill-row">
+                <span class="rp-skill-cat">Soft Skills:</span>
+                <span class="rp-skill-items">Cross-functional Collaboration, Stakeholder Communication, Problem Solving,
+                  Attention to Detail</span>
+              </div>
+            </div>
+
+            <div class="rp-sec" style="margin-top:28px;">
+              <h2 class="rp-heading">EDUCATION</h2>
+              <div class="rp-sec-border"></div>
+
+              <div class="rp-job-block">
+                <div class="rp-job-row">
+                  <div>
+                    <strong class="rp-role-title">UI/UX &amp; Graphic Design</strong>
+                    <span class="rp-company-name">Certification</span>
+                  </div>
+                  <span class="rp-date-badge">2022 – 2023</span>
+                </div>
+                <div class="rp-proj-desc" style="margin-top:2px;">Image Creative, Chennai</div>
+              </div>
+
+              <div class="rp-job-block" style="margin-top:16px;">
+                <div class="rp-job-row">
+                  <div>
+                    <strong class="rp-role-title">Bachelor of Engineering</strong>
+                    <span class="rp-company-name">Civil Engineering</span>
+                  </div>
+                  <span class="rp-date-badge">2016 – 2020</span>
+                </div>
+                <div class="rp-proj-desc" style="margin-top:2px;">Sethu Institute of Technology, Virudhunagar</div>
+              </div>
+            </div>
+
+            <div class="rp-footer-no">Page 3 of 3</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer>
