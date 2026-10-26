@@ -46,7 +46,7 @@
       el.className = 'fi';
       el.textContent = icons[Math.floor(Math.random() * icons.length)];
       const size = 12 + Math.random() * 18;
-      el.style.cssText = `left:${Math.random() * 100}%;bottom:-40px;font-size:${size}px;color:rgba(${Math.random() > 0.5 ? '167,139,250' : '45,212,191'},${0.1 + Math.random() * 0.15});animation-duration:${9 + Math.random() * 14}s;animation-delay:${Math.random() * 4}s;`;
+      el.style.cssText = `left:${Math.random() * 100}%;bottom:-40px;font-size:${size}px;color:rgba(255,255,255,${0.04 + Math.random() * 0.06});animation-duration:${9 + Math.random() * 14}s;animation-delay:${Math.random() * 4}s;`;
       container.appendChild(el);
       setTimeout(() => el.remove(), 23000);
     }
