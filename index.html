@@ -4,1011 +4,591 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Subramaniyam M — UI/UX Designer</title>
+  <title>Subramaniyam M — Product Designer</title>
+  <meta name="description"
+    content="Subramaniyam M — Product Designer with 3+ years crafting intuitive digital experiences across web and mobile." />
   <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Caveat:wght@600;700&family=Playfair+Display:ital@1&display=swap"
     rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css?v=3" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- CURSOR GLOW -->
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar" id="navbar">
+      <!-- Brand pill: avatar + name -->
+      <a href="#hero" class="nav-brand">
+        <img src="images/nav_avatar.png" alt="Subramaniyam M" class="nav-avatar" />
+        <span class="nav-name">Subbu</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#about" class="nav-link">About Me</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-  <!-- BULB CURSOR (replaces default mouse arrow) -->
-  <div class="cursor-follower" id="cursorFollower">
-    <svg viewBox="0 0 100 150" width="32" height="48" style="overflow:visible;">
-      <defs>
-        <filter id="miniGlow" x="-80%" y="-80%" width="260%" height="260%">
-          <feGaussianBlur stdDeviation="4" result="blur" />
-          <feMerge>
-            <feMergeNode in="blur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-      <!-- Glass bulb globe -->
-      <circle cx="50" cy="60" r="28" class="bulb-glass" fill="rgba(255,240,180,0.08)" stroke="rgba(200,160,50,0.7)"
-        stroke-width="2" filter="url(#miniGlow)" />
-      <!-- Wire leads -->
-      <path d="M 44 88 L 46 70 M 56 88 L 54 70" stroke="rgba(160,120,40,0.8)" stroke-width="1.5" fill="none" />
-      <!-- Filament -->
-      <path class="cursor-filament" d="M 46 70 C 46 59 50 54 50 50 C 50 54 54 59 54 70" stroke="#c8a020"
-        stroke-width="2" stroke-linecap="round" fill="none" />
-      <!-- Outer glass shape -->
-      <path d="M 32 84 C 14 74 14 33 50 33 C 86 33 86 74 68 84 C 63 94 61 104 61 112 L 39 112 C 39 104 37 94 32 84 Z"
-        fill="rgba(255,248,200,0.05)" stroke="rgba(200,160,50,0.6)" stroke-width="1.5" />
-      <!-- Base bands -->
-      <path d="M 39 112 L 61 112 M 40 117 L 60 117 M 41 122 L 59 122" stroke="#555" stroke-width="2"
-        stroke-linecap="round" />
-      <!-- Base cap -->
-      <path d="M 43 122 C 43 128 57 128 57 122 Z" fill="#3a3a3a" />
-    </svg>
-  </div>
-
-  <!-- PARTICLE BURST CANVAS & FLASH -->
-  <canvas id="burstCanvas"></canvas>
-  <div id="burstFlash"></div>
-
-  <!-- BACKGROUND BLOBS -->
-  <div class="blobs">
-    <div class="blob blob1"></div>
-    <div class="blob blob2"></div>
-    <div class="blob blob3"></div>
-  </div>
-
-  <!-- FLOATING ICONS -->
-  <div class="float-icons" id="floatIcons"></div>
-
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">Subbu</div>
-    <ul class="nav-links">
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="mailto:subramaniyam3.m@gmail.com" class="btn-hire">Hire me</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+  <!-- Mobile Nav -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div class="mobile-drawer" id="mobileDrawer">
+      <button class="mobile-close" id="mobileClose">&#x2715;</button>
+      <ul>
+        <li><a href="#projects" class="m-link">Projects</a></li>
+        <li><a href="#about" class="m-link">About Me</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
 
-  <div class="wrapper">
-    <!-- ===== HERO ===== -->
-    <section class="hero container-fluid px-md-5" id="hero">
-      <div class="d-flex flex-column align-items-center text-center w-100 py-5">
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <!-- Real banner image as full-bleed background -->
+    <div class="hero-bg-img"></div>
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          HEY, I AM <span class="eyebrow-script">Subramaniyam M</span>
+        </div>
+        <h1 class="hero-title">
+          PRODUCT<br><span class="hero-title-outline">DESIGNER.</span>
+        </h1>
+        <p class="hero-desc">Results-driven designer crafting intuitive digital products across web and mobile — from
+          user research and wireframing to high-fidelity prototyping.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary" id="heroViewWork">View My Work</a>
+          <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-outline"
+            id="heroBehance">Behance &#x2197;</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-badge">
+          <span class="badge-num">3+</span>
+          <span class="badge-text">Years Of<br>Designing</span>
+        </div>
+        <div class="hero-open-tag">
+          <span class="tag-dot"></span> Open For Opportunities
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-        <!-- HERO BANNER WRAPPER (Centers text and image together) -->
-        <div class="hero-banner-layout reveal">
-          <!-- HERO HEADER GROUP (Background layer) -->
-          <div class="hero-header-group">
-            <h1>
-              Hi,&nbsp;&nbsp;I am<br>
-              <span class="name">Subramaniyam M</span>
-            </h1>
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-wrap">
+    <div class="marquee-inner">
+      <div class="marquee-track">
+        <span>UX RESEARCH</span><span class="mdot">&#x2726;</span>
+        <span>UI DESIGN</span><span class="mdot">&#x2726;</span>
+        <span>DESIGN SYSTEMS</span><span class="mdot">&#x2726;</span>
+        <span>PRODUCT STRATEGY</span><span class="mdot">&#x2726;</span>
+        <span>PROTOTYPING</span><span class="mdot">&#x2726;</span>
+        <span>WEB DEVELOPMENT</span><span class="mdot">&#x2726;</span>
+        <span>FIGMA</span><span class="mdot">&#x2726;</span>
+        <span>MOBILE APP DESIGN</span><span class="mdot">&#x2726;</span>
+        <span>UX RESEARCH</span><span class="mdot">&#x2726;</span>
+        <span>UI DESIGN</span><span class="mdot">&#x2726;</span>
+        <span>DESIGN SYSTEMS</span><span class="mdot">&#x2726;</span>
+        <span>PRODUCT STRATEGY</span><span class="mdot">&#x2726;</span>
+        <span>PROTOTYPING</span><span class="mdot">&#x2726;</span>
+        <span>WEB DEVELOPMENT</span><span class="mdot">&#x2726;</span>
+        <span>FIGMA</span><span class="mdot">&#x2726;</span>
+        <span>MOBILE APP DESIGN</span><span class="mdot">&#x2726;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONNECT TEASER ===== -->
+  <section class="connect-section" id="connect">
+    <div class="connect-inner">
+      <div class="connect-sticker">
+        <p class="sticker-head">my menu</p>
+        <span>&#9900; Product Design</span>
+        <span>&#9900; UI/UX Design</span>
+        <span>&#9900; Web Design</span>
+        <span>&#9900; Branding</span>
+      </div>
+      <div class="connect-center">
+        <p class="connect-label">alright, let's connect &amp;</p>
+        <h2 class="connect-big">create something really<br><em class="connect-script">cool together :)</em></h2>
+        <div class="connect-btns">
+          <a href="mailto:subramaniyam3.m@gmail.com" class="btn-connect-primary" id="connectEmail">Say Hello
+            &#x2709;</a>
+          <a href="https://www.linkedin.com/in/subramaniyam-m" target="_blank" rel="noopener" class="btn-connect-ghost"
+            id="connectLinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+      <div class="connect-emoji">&#x270C;&#xFE0F;</div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="featured-section" id="projects">
+    <!-- Section header -->
+    <div class="projects-section-header">
+      <div class="feat-badge">&#9733; SELECTED WORKS</div>
+      <h2 class="projects-main-title">Projects I've Designed &amp; Built</h2>
+      <p class="projects-main-sub">Real products across logistics, AI, e-commerce, hospitality, and SaaS &mdash; from concept to delivery.</p>
+    </div>
+
+    <!-- 3-slide horizontal scroll carousel -->
+    <div class="proj-carousel-wrap">
+      <div class="proj-carousel" id="projCarousel">
+
+        <!-- SLIDE 1: TMS -->
+        <div class="proj-slide" id="slide-tms">
+          <div class="featured-inner">
+            <div class="feat-text">
+              <div class="feat-badge">&#9733; FEATURED PROJECT</div>
+              <h2 class="feat-title">Transport Management<br>App &mdash; TMS Platform</h2>
+        <p class="feat-desc">Full-cycle UI/UX for a logistics TMS covering shipment tracking, driver management, route
+          optimisation, and real-time reporting dashboards for web and mobile.</p>
+        <div class="feat-tags">
+          <span>UX Design</span>
+          <span>Dashboard</span>
+          <span>Mobile App</span>
+          <span>Logistics</span>
+        </div>
+              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on Behance &#x2197;</a>
+            </div>
+            <div class="feat-visual">
+              <div class="feat-mockup-wrap">
+                <img src="images/tms_mockup.png" alt="TMS Mobile App Mockup" class="feat-mockup-img" />
+                <div class="feat-glow"></div>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <!-- HERO IMAGE GROUP (Foreground layer, overlays title) -->
-          <div class="hero-image-group">
-            <div class="hero-visual-wrapper" id="heroVisualWrapper">
+        <!-- SLIDE 2: AI Platform -->
+        <div class="proj-slide" id="slide-ai">
+          <div class="featured-inner">
+            <div class="feat-text">
+              <div class="feat-badge">&#9733; WEB APP &middot; AI</div>
+              <h2 class="feat-title">Student AI Job<br>Searching Platform</h2>
+              <p class="feat-desc">AI-powered career platform with smart job-matching, personalised recommendations, profile builder, onboarding flows, and application tracking — designed end to end.</p>
+              <div class="feat-tags">
+                <span>AI UX</span>
+                <span>Onboarding</span>
+                <span>Web App</span>
+                <span>2024</span>
+              </div>
+              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on Behance &#x2197;</a>
+            </div>
+            <div class="feat-visual">
+              <div class="feat-mockup-wrap slide2-visual">
+                <div class="proj-icon-display" style="--ic:#f97316;">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <div class="feat-glow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <!-- BULB BEHIND IMAGE (low opacity, glows on scroll) -->
-              <div class="hero-bulb-container" id="heroBulbContainer">
-                <div class="hero-bulb-glow-back" id="bulbGlowBack"></div>
-                <svg id="heroBulb" viewBox="0 0 100 150" class="hero-bulb-svg" width="220" height="330">
+        <!-- SLIDE 3: CRM + E-Commerce -->
+        <div class="proj-slide" id="slide-crm">
+          <div class="featured-inner">
+            <div class="feat-text">
+              <div class="feat-badge">&#9733; WEB APP &middot; CRM</div>
+              <h2 class="feat-title">CRM Dashboard<br>&amp; E-Commerce</h2>
+              <p class="feat-desc">Data-rich CRM dashboards for KPI management + fully responsive e-commerce site with catalog, cart, and conversion-optimised checkout. Designed &amp; developed.</p>
+              <div class="feat-tags">
+                <span>CRM</span>
+                <span>Dashboard</span>
+                <span>E-Commerce</span>
+                <span>2024–25</span>
+              </div>
+              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on Behance &#x2197;</a>
+            </div>
+            <div class="feat-visual">
+              <div class="feat-mockup-wrap slide3-visual">
+                <div class="proj-icon-display" style="--ic:#eab308;">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div class="feat-glow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end carousel -->
+
+      <!-- Dots + arrows -->
+      <div class="proj-carousel-controls">
+        <button class="pcar-arrow" id="pcarPrev" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="pcar-dots" id="pcarDots">
+          <button class="pcar-dot active" data-slide="0"></button>
+          <button class="pcar-dot" data-slide="1"></button>
+          <button class="pcar-dot" data-slide="2"></button>
+        </div>
+        <button class="pcar-arrow" id="pcarNext" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div><!-- end carousel wrap -->
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-photo-col">
+        <div class="about-photo-frame">
+          <img src="images/about_bike.jpg" alt="Subramaniyam M with his Yamaha MT-15" class="about-photo" />
+          <div class="about-photo-tag">
+            <span>&#128205; Madurai, India</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text-col">
+        <div class="feat-badge">&#9733; ABOUT ME</div>
+        <h2 class="about-title">A Little About<br><em class="about-title-script">Myself</em></h2>
+        <p class="about-body">My journey into design started with a deep passion for visual communication. With a
+          background in Civil Engineering and a dedicated certification in UI/UX &amp; Graphic Design from Image
+          Creative, Chennai, I've built a unique perspective &mdash; combining structured problem-solving with creative
+          thinking.</p>
+        <p class="about-body">Today, I work on web and mobile products, designing everything from logistics dashboards
+          and AI platforms to e-commerce experiences. I care deeply about crafting interfaces that are not just
+          beautiful, but genuinely functional and user-friendly.</p>
+        <div class="about-pills">
+          <span>Product Designer</span>
+          <span>UI/UX Designer</span>
+          <span>Front-End Dev</span>
+          <span>3+ Years Exp</span>
+        </div>
+        <div class="about-links">
+          <a href="https://www.linkedin.com/in/subramaniyam-m" target="_blank" rel="noopener" class="alink"
+            id="aboutLinkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="alink"
+            id="aboutBehance"><i class="fa-brands fa-behance"></i> Behance</a>
+          <a href="mailto:subramaniyam3.m@gmail.com" class="alink" id="aboutEmail"><i class="fa-solid fa-envelope"></i>
+            Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills-section" id="skills">
+    <div class="skills-light-bg">
+      <div class="container">
+
+        <!-- BAG ANIMATION SCENE -->
+        <div class="bag-scene" id="bagScene">
+          <!-- The Bag -->
+          <div class="bag-wrap" id="bagWrap">
+            <div class="bag-img-container">
+              <img src="images/bag.png" alt="Designer's Bag" class="bag-img" id="bagImg"
+                style="display:none;"/>
+              <!-- Inline SVG backpack illustration (shown when no bag.png) -->
+              <div class="bag-fallback" id="bagFallback" style="display:flex;">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;filter:drop-shadow(0 24px 48px rgba(0,0,0,.35))">
+                  <!-- Bag body -->
+                  <rect x="30" y="70" width="140" height="165" rx="22" fill="#2a2a2a"/>
+                  <!-- Bag sheen -->
+                  <rect x="30" y="70" width="140" height="165" rx="22" fill="url(#bagGrad)" opacity=".7"/>
+                  <!-- Front pocket -->
+                  <rect x="42" y="118" width="116" height="70" rx="12" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="1.5"/>
+                  <!-- Pocket zipper -->
+                  <line x1="50" y1="118" x2="150" y2="118" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="100" cy="118" r="4" fill="#888"/>
+                  <!-- Top handle -->
+                  <path d="M72 70 Q72 50 100 50 Q128 50 128 70" fill="none" stroke="#1e1e1e" stroke-width="12" stroke-linecap="round"/>
+                  <path d="M72 70 Q72 52 100 52 Q128 52 128 70" fill="none" stroke="#3a3a3a" stroke-width="6" stroke-linecap="round"/>
+                  <!-- Shoulder straps -->
+                  <path d="M55 78 C45 90 38 130 42 190" fill="none" stroke="#1e1e1e" stroke-width="16" stroke-linecap="round"/>
+                  <path d="M145 78 C155 90 162 130 158 190" fill="none" stroke="#1e1e1e" stroke-width="16" stroke-linecap="round"/>
+                  <!-- Logo text -->
+                  <text x="100" y="170" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#e44" letter-spacing="1">FIGMA</text>
+                  <!-- Side pockets hint -->
+                  <rect x="20" y="100" width="12" height="50" rx="6" fill="#222"/>
+                  <rect x="168" y="100" width="12" height="50" rx="6" fill="#222"/>
+                  <!-- Gradient def -->
                   <defs>
-                    <filter id="glowFilament" x="-80%" y="-80%" width="260%" height="260%">
-                      <feGaussianBlur stdDeviation="1.5" result="blur1" />
-                      <feGaussianBlur stdDeviation="4" result="blur2" />
-                      <feMerge>
-                        <feMergeNode in="blur2" />
-                        <feMergeNode in="blur1" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                    <filter id="glowGlass" x="-60%" y="-60%" width="220%" height="220%">
-                      <feGaussianBlur stdDeviation="6" result="blur" />
-                      <feComponentTransfer in="blur" result="glow">
-                        <feFuncA type="linear" slope="0.5" />
-                      </feComponentTransfer>
-                      <feMerge>
-                        <feMergeNode in="glow" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
+                    <linearGradient id="bagGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#5a5a5a"/>
+                      <stop offset="60%" stop-color="#2a2a2a" stop-opacity="0"/>
+                    </linearGradient>
                   </defs>
-                  <!-- glass globe -->
-                  <circle cx="50" cy="60" r="34" fill="rgba(251,191,36,0.06)" filter="url(#glowGlass)"
-                    class="bulb-glow-circle" />
-                  <!-- wire leads -->
-                  <path d="M 43 93 L 46 70 M 57 93 L 54 70" stroke="rgba(200,160,60,0.6)" stroke-width="1.5"
-                    fill="none" />
-                  <!-- filament coil -->
-                  <path id="bulbFilament" d="M 46 70 C 46 57 50 52 50 48 C 50 52 54 57 54 70" stroke="#c8a020"
-                    stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glowFilament)" />
-                  <!-- outer glass shape -->
-                  <path
-                    d="M 32 86 C 12 76 12 31 50 31 C 88 31 88 76 68 86 C 63 96 60 107 60 114 L 40 114 C 40 107 37 96 32 86 Z"
-                    fill="rgba(255,255,220,0.04)" stroke="rgba(200,160,60,0.5)" stroke-width="1.5" />
-                  <!-- base plates -->
-                  <path d="M 39 114 L 61 114 M 40 119 L 60 119 M 41 124 L 59 124 M 43 129 L 57 129" stroke="#555"
-                    stroke-width="2.5" stroke-linecap="round" />
-                  <!-- base cap -->
-                  <path d="M 44 129 C 44 135 56 135 56 129 Z" fill="#3a3a3a" />
                 </svg>
               </div>
+            </div>
+            <!-- Sparkles on bag -->
+            <div class="bag-sparkles">
+              <span class="sp sp1">✦</span>
+              <span class="sp sp2">✦</span>
+              <span class="sp sp3">✦</span>
+              <span class="sp sp4">+</span>
+              <span class="sp sp5">✦</span>
+            </div>
+          </div>
 
-              <!-- PROFILE PHOTO on top of bulb -->
-              <div class="hero-profile-img-wrap" id="heroProfileImg">
-                <img src="images/subramaniyam_standing.png" alt="Subramaniyam M — UI/UX Designer" id="profilePhoto" />
+          <!-- Tools that drop from the bag -->
+          <div class="tools-drop-zone" id="toolsDropZone">
+            <div class="tool-icon-wrap t1" data-delay="0">
+              <div class="tool-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="tool-logo"/>
+                <span>Figma</span>
               </div>
-
+            </div>
+            <div class="tool-icon-wrap t2" data-delay="80">
+              <div class="tool-card">
+                <!-- Adobe Photoshop real logo -->
+                <svg class="tool-logo" viewBox="0 0 240 234" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#001e36" d="M0 0h240v234H0z"/>
+                  <path fill="#31a8ff" d="M54.2 168.4V71.2c0-.8.4-1.3 1.2-1.3 2.1 0 4.1 0 6.9-.1 2.9-.1 5.9-.1 9.2-.2 3.3-.1 6.8-.1 10.6-.2 3.8-.1 7.5-.1 11.3-.1 10.2 0 18.6 1.3 25.4 4 6.3 2.4 11.6 6.1 15.7 10.9 3.9 4.6 6.8 10 8.5 16 1.7 6 2.6 12.3 2.6 18.6 0 12.9-2.9 23.3-8.6 31-5.8 7.7-13.7 13.2-23.1 16-5.3 1.6-11.4 2.3-18.2 2.3-2.9 0-5.1 0-6.7-.1v50.4c.1.8-.5 1.4-1.3 1.5H55.5c-.9 0-1.3-.4-1.3-1.3zm22.8-79.9v40.7c1.9.1 3.6.2 5.1.2h7.1c4.3 0 8.5-.7 12.4-2.2 3.5-1.3 6.6-3.5 9-6.4 2.3-2.9 3.5-6.9 3.5-12 0-4.2-.8-7.9-2.3-10.9-1.5-3-3.9-5.5-7-7.3-3.3-1.9-7.8-2.8-13.5-2.8-2.7 0-5.2 0-7.4.1-2.2.1-5.8.5-6.9.6z"/>
+                </svg>
+                <span>Photoshop</span>
+              </div>
+            </div>
+            <div class="tool-icon-wrap t3" data-delay="160">
+              <div class="tool-card">
+                <!-- Adobe Illustrator real logo -->
+                <svg class="tool-logo" viewBox="0 0 240 234" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#1a0a00" d="M0 0h240v234H0z"/>
+                  <path fill="#ff9a00" d="M101 148.3H63.5l-8 25.6c-.2.9-1 1.5-1.9 1.5H35.3c-1.1 0-1.4-.6-1.1-1.8l34-97.6c.4-1 .7-2.1 1-3.3.4-2.3.6-4.6.6-6.9-.1-.5.3-1 .8-1.1h25.4c.7 0 1.1.3 1.2.9l38.4 108.1c.3 1.1 0 1.7-1 1.7h-22.5c-.8.1-1.5-.4-1.7-1.1l-9.4-26.1zm-31.4-19.8H94l-7.4-23.9c-.8-2.5-1.7-5.4-2.5-8.4-.9-3-1.7-5.9-2.4-8.6-.7 2.8-1.4 5.7-2.2 8.6-.8 3-1.6 5.9-2.4 8.5l-7.5 23.8zm86.2-55.6c-2.4.1-4.8-.8-6.5-2.5-1.7-1.8-2.5-4.2-2.5-6.5-.1-2.5.9-4.9 2.7-6.6 1.9-1.7 4.3-2.6 6.8-2.5 3 0 5.4.8 7 2.5 1.7 1.7 2.6 4.1 2.5 6.6.1 2.4-.9 4.7-2.6 6.4-1.9 1.7-4.4 2.6-7.4 2.6zm-11.4 75.4V97.4c0-1 .4-1.4 1.4-1.4h20.5c1 0 1.4.5 1.4 1.4v50.9c0 1.1-.4 1.5-1.4 1.5h-20.3c-1.1.1-1.6-.4-1.6-1.5z"/>
+                </svg>
+                <span>Illustrator</span>
+              </div>
+            </div>
+            <div class="tool-icon-wrap t4" data-delay="240">
+              <div class="tool-card">
+                <!-- Adobe After Effects real logo -->
+                <svg class="tool-logo" viewBox="0 0 240 234" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#00005b" d="M0 0h240v234H0z"/>
+                  <path fill="#9999ff" d="M71.8 148.3H34.4l-8 25.6c-.2.9-1 1.5-1.9 1.5H6.2c-1.1 0-1.4-.6-1.1-1.8l34-97.6c.4-1 .7-2.1 1-3.3.4-2.3.6-4.6.6-6.9-.1-.5.3-1 .8-1.1h25.4c.7 0 1.1.3 1.2.9l38.4 108.1c.3 1.1 0 1.7-1 1.7H83c-.8.1-1.5-.4-1.7-1.1l-9.5-26.1zM40.4 128.5h23.4l-7.4-23.9c-.8-2.5-1.7-5.4-2.5-8.4-.9-3-1.7-5.9-2.4-8.6-.7 2.8-1.4 5.7-2.2 8.6-.8 3-1.6 5.9-2.4 8.5l-7.5 23.8zm108.4 18.2c2.5 1.4 5.5 2.5 9.1 3.3 3.5.8 7.1 1.2 10.7 1.2 2.2 0 4.4-.2 6.5-.6 2-.3 3.9-1 5.6-2 1.6-.9 2.9-2.2 3.8-3.8.9-1.7 1.4-3.8 1.4-6.1 0-2.2-.5-4.1-1.5-5.7-1.1-1.7-2.5-3.2-4.2-4.4-1.9-1.3-4-2.5-6.3-3.5-2.3-1-4.8-2.1-7.3-3.2-3.3-1.4-6.5-3-9.5-4.8-2.8-1.7-5.3-3.7-7.5-6.1-2.1-2.3-3.8-5-5-8-.9-3.4-1.4-7-1.4-10.7 0-5.1 1-9.6 3-13.4 1.9-3.7 4.6-6.9 7.9-9.4 3.3-2.5 7.2-4.3 11.4-5.4 4.4-1.1 9-1.7 13.6-1.7 4.5 0 9 .4 13.4 1.2 3.4.6 6.7 1.6 9.8 3 .8.4 1.4 1 1.7 1.7.2.6.3 1.2.3 1.8v17.8c0 .4-.1.9-.4 1.2-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.3-2.5-1.3-5.2-2.3-8-3.1-3.2-.9-6.5-1.3-9.9-1.3-2 0-4 .2-5.9.7-1.6.4-3.1 1.1-4.4 2-1.1.8-2 1.9-2.6 3.1-.6 1.3-.9 2.6-.8 4 0 1.9.5 3.7 1.5 5.3 1.1 1.6 2.5 3 4.2 4.1 1.9 1.3 4.1 2.5 6.6 3.6 2.5 1.1 5.1 2.3 7.9 3.5 3.2 1.4 6.3 3 9.2 4.8 2.8 1.7 5.2 3.8 7.3 6.2 2.1 2.4 3.7 5.1 4.8 8.1 1.2 3.4 1.8 7 1.7 10.7.1 5.5-1 10.9-3.3 15.9-2.1 4.3-5.2 8.1-9.1 11-4 2.9-8.6 5-13.5 6.2-5.4 1.3-10.9 2-16.5 1.9-5.1 0-10.3-.5-15.3-1.5-3.8-.7-7.5-1.9-11-3.5-.8-.4-1.5-1-1.9-1.8-.3-.6-.4-1.3-.4-2v-18.3c0-.5.2-1 .5-1.4.4-.3.9-.4 1.4-.2.1.1.1.2.1.2z"/>
+                </svg>
+                <span>After Effects</span>
+              </div>
+            </div>
+            <div class="tool-icon-wrap t5" data-delay="100">
+              <div class="tool-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="tool-logo"/>
+                <span>HTML5</span>
+              </div>
+            </div>
+            <div class="tool-icon-wrap t6" data-delay="200">
+              <div class="tool-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tool-logo"/>
+                <span>CSS3</span>
+              </div>
+            </div>
+            <div class="tool-icon-wrap t7" data-delay="300">
+              <div class="tool-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" class="tool-logo"/>
+                <span>JavaScript</span>
+              </div>
+            </div>
+            <div class="tool-icon-wrap t8" data-delay="50">
+              <div class="tool-card">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="tool-logo"/>
+                <span>Angular</span>
+              </div>
+            </div>
+            <div class="tool-icon-wrap t9" data-delay="180">
+              <div class="tool-card">
+                <div class="tool-logo-icon ux-col"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <span>UX Research</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- HERO BODY GROUP -->
-        <div class="hero-body-group">
-          <p class="hero-role reveal">Product Designer <span class="highlight"></span></p>
-          <p class="hero-exp reveal">✦ 3+ Years of hands-on experience</p>
-          <p class="hero-desc reveal">
-            Results-driven designer crafting intuitive digital products across web and mobile — from user research and
-            wireframing to high-fidelity prototyping and front-end implementation. Delivering polished,
-            conversion-focused experiences.
+        <!-- Skill labels row below -->
+        <div class="skill-tags-light">
+          <span class="stag">Product Design</span>
+          <span class="stag orange">UI/UX Design</span>
+          <span class="stag">Design Systems</span>
+          <span class="stag orange">Prototyping</span>
+          <span class="stag">Wireframing</span>
+          <span class="stag">Mobile App Design</span>
+          <span class="stag orange">Web Development</span>
+          <span class="stag">Design Thinking</span>
+          <span class="stag">User Testing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="experience-section" id="experience">
+    <div class="container">
+      <div class="feat-badge">&#9733; WORK EXPERIENCES</div>
+      <h2 class="section-title exp-main-title">Check Out Some<br><em class="exp-script">Journey</em></h2>
+    </div>
+
+    <!-- Horizontal scroll timeline -->
+    <div class="exp-timeline-outer">
+      <div class="exp-timeline-track" id="expTrack">
+
+        <!-- Card 1: Turbocode -->
+        <div class="exp-tl-item slide-from-right" id="exp-turbocode">
+          <div class="exp-tl-date current-pill">
+            <span class="tl-dot-green"></span>
+            March'25 &ndash; <strong>Present</strong>
+          </div>
+          <div class="exp-tl-connector"></div>
+          <div class="exp-tl-card">
+            <div class="exp-tl-logo tc-logo-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="exp-tl-info">
+              <h3>Product Designer</h3>
+              <p class="etl-company">Turbocode Technologies</p>
+              <p class="etl-location">Coimbatore</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Embark Senior -->
+        <div class="exp-tl-item slide-from-right" id="exp-embark-senior">
+          <div class="exp-tl-date">
+            Jan'24 &ndash; Jun'24
+          </div>
+          <div class="exp-tl-connector"></div>
+          <div class="exp-tl-card">
+            <div class="exp-tl-logo ei-logo-icon"><span>embark</span></div>
+            <div class="exp-tl-info">
+              <h3>Sr. UI/UX Designer</h3>
+              <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
+              <p class="etl-location">Madurai</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Embark Junior -->
+        <div class="exp-tl-item slide-from-right" id="exp-embark-junior">
+          <div class="exp-tl-date">
+            Sep'23 &ndash; Dec'23
+          </div>
+          <div class="exp-tl-connector"></div>
+          <div class="exp-tl-card">
+            <div class="exp-tl-logo ei-logo-icon"><span>embark</span></div>
+            <div class="exp-tl-info">
+              <h3>Jr. UI/UX Designer</h3>
+              <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
+              <p class="etl-location">Madurai</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end track -->
+    </div><!-- end outer -->
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="education-section" id="education">
+    <div class="container">
+      <div class="feat-badge">&#9733; EDUCATION</div>
+      <h2 class="section-title">My Years Of Daily Learning</h2>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-icon" style="background:#f9731620;color:#f97316;"><i
+              class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="edu-info">
+            <span class="edu-badge">Certification</span>
+            <h3>UI/UX &amp; Graphic Design</h3>
+            <p>Image Creative, Madurai</p>
+            <span class="edu-year">2021 &ndash; 2023</span>
+          </div>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-icon" style="background:#6366f120;color:#6366f1;"><i class="fa-solid fa-helmet-safety"></i>
+          </div>
+          <div class="edu-info">
+            <span class="edu-badge">Bachelor's Degree</span>
+            <h3>Bachelor of Engineering</h3>
+            <p>Sethu Institute of Technology, Virudhunagar &middot; Civil Engineering</p>
+            <span class="edu-year">2016 &ndash; 2020</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="feat-badge">&#9733; KIND WORDS</div>
+      <h2 class="section-title">What People Say About Me</h2>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-text">"Subramaniyam has an exceptional eye for detail. His ability to translate complex
+            requirements into clean, intuitive interfaces is remarkable. Working with him was a seamless experience."
           </p>
-          <div class="hero-actions reveal">
-            <a href="#projects" class="btn-primary">View my works</a>
-            <!-- <button type="button" class="btn-ghost open-resume-trigger" id="heroResumeBtn"> -->
-            <!-- class="fa-solid fa-file-pdf" style="color:var(--accent2);margin-right:8px;"></i>View Resume</button> -->
-
-            <!-- <a href="mailto:subramaniyam3.m@gmail.com" class="btn-ghost">Get in touch</a> -->
-          </div>
-          <div class="hero-stats reveal">
-            <div class="stat-item">
-              <div class="stat-num">3+<span>yrs</span></div>
-              <div class="stat-lbl">Experience</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">10<span>+</span></div>
-              <div class="stat-lbl">Client projects</div>
-            </div>
-            <!-- <div class="stat-item">
-              <div class="stat-num">6<span>+</span></div>
-              <div class="stat-lbl">Product types</div>
-            </div> -->
-            <div class="stat-item">
-              <div class="stat-num">2<span></span></div>
-              <div class="stat-lbl">Companies</div>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#f97316;">P</div>
+            <div>
+              <strong>Priya Kabilan</strong>
+              <span>Product Manager, Turbocode Technology</span>
             </div>
           </div>
         </div>
-
-      </div>
-      <div class="hero-scroll">
-        <div class="scroll-line"></div>
-        Scroll
-      </div>
-    </section>
-
-    <div class="full-divider"></div>
-
-    <!-- ===== SKILLS ===== -->
-    <section class="sec" id="skills">
-      <div class="sec-eye reveal"><i class="fa-solid fa-compass fa-spin"></i> Expertise</div>
-      <h2 class="sec-title reveal">Design skills &amp;<br>toolkit</h2>
-      <p class="sec-sub reveal">Full-spectrum UX craft — from research and strategy to visual design, prototyping, and
-        front-end development.</p>
-      <div class="row g-4 mt-2 mobile-horizontal-scroll">
-
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="skill-card glass-card h-100 reveal" style="transition-delay:0.05s">
-            <div class="sk-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-            <h3>UI Design</h3>
-            <p>Pixel-perfect interfaces with strong visual hierarchy, consistent design systems, and polished
-              micro-interactions across every platform.</p>
-            <div class="skill-pills">
-              <span class="pill">Figma</span><span class="pill">Adobe XD</span><span class="pill">Design
-                Systems</span><span class="pill">Component Libraries</span><span class="pill">Auto Layout</span>
+        <div class="testi-card reveal">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-text">"His designs always strike the perfect balance between aesthetics and usability.
+            Subramaniyam truly understands users &mdash; every decision is backed by solid thinking."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#6366f1;">R</div>
+            <div>
+              <strong>Ravi Kumar</strong>
+              <span>CEO, Embark Interactive</span>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="skill-card glass-card h-100 reveal" style="transition-delay:0.1s">
-            <div class="sk-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-            <h3>UX Research</h3>
-            <p>Understanding users through interviews, heuristic evaluations, and usability reviews — turning insights
-              into measurable design improvements.</p>
-            <div class="skill-pills">
-              <span class="pill">User Research</span><span class="pill">Usability Testing</span><span
-                class="pill">Heuristic Evaluation</span><span class="pill">Personas</span><span class="pill">Journey
-                Mapping</span>
+        <div class="testi-card reveal">
+          <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testi-text">"From wireframe to final handoff, Subramaniyam maintains quality throughout. He's
+            collaborative, fast, and genuinely passionate about creating great user experiences."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:#10b981;">A</div>
+            <div>
+              <strong>Anitha Krishnan</strong>
+              <span>Frontend Lead, Embark Interactive</span>
             </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="skill-card glass-card h-100 reveal" style="transition-delay:0.15s">
-            <div class="sk-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-            <h3>Mobile &amp; App Design</h3>
-            <p>Native iOS and Android experiences — thumb-friendly layouts, gesture-based navigation, and
-              platform-specific design patterns.</p>
-            <div class="skill-pills">
-              <span class="pill">iOS HIG</span><span class="pill">Material Design</span><span
-                class="pill">Responsive</span><span class="pill">Mobile-First</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="skill-card glass-card h-100 reveal" style="transition-delay:0.2s">
-            <div class="sk-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-            <h3>Prototyping &amp; Handoff</h3>
-            <p>High-fidelity Figma prototypes and developer-ready design specs that reduce back-and-forth during
-              handoff.</p>
-            <div class="skill-pills">
-              <span class="pill">Figma Prototype</span><span class="pill">Dev Handoff</span><span class="pill">Design
-                Tokens</span><span class="pill">Interaction Design</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="skill-card glass-card h-100 reveal" style="transition-delay:0.25s">
-            <div class="sk-icon"><i class="fa-solid fa-laptop-code"></i></div>
-            <h3>Web Design &amp; Dev</h3>
-            <p>Designing and building responsive websites — e-commerce, SaaS landing pages, hotel booking, and business
-              portfolios with HTML, CSS &amp; JS.</p>
-            <div class="skill-pills">
-              <span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">JavaScript</span><span
-                class="pill">Angular</span><span class="pill">Responsive</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="skill-card glass-card h-100 reveal" style="transition-delay:0.3s">
-            <div class="sk-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <h3>Visual &amp; Graphic Design</h3>
-            <p>Brand identity, logo design, infographics, social media creatives, motion graphics, and video editing
-              across 10+ client projects.</p>
-            <div class="skill-pills">
-              <span class="pill">Logo Design</span><span class="pill">Brand Identity</span><span
-                class="pill">Infographics</span><span class="pill">Motion Graphics</span><span class="pill">Video
-                Editing</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== TOOLS ===== -->
-    <section class="sec" style="padding-top:0;">
-      <div class="sec-eye reveal"><i class="fa-solid fa-toolbox fa-bounce"></i> Arsenal</div>
-      <h2 class="sec-title reveal">Tools I work with</h2>
-      <div class="tools-grid reveal">
-        <div class="tool-chip"><span class="te"><i class="fa-brands fa-figma"></i></span> Figma
-        </div>
-        <div class="tool-chip"><span class="te"><i class="fa-solid fa-image"></i></span> Adobe
-          Photoshop</div>
-        <div class="tool-chip"><span class="te"><i class="fa-solid fa-bezier-curve"></i></span>
-          Adobe Illustrator</div>
-        <div class="tool-chip"><span class="te"><i class="fa-solid fa-film"></i></span> Adobe
-          After Effects</div>
-        <!-- <div class="tool-chip"><span class="te"><i class="fa-solid fa-video"></i></span> Adobe
-          Premiere Pro</div> -->
-        <div class="tool-chip"><span class="te"><i class="fa-brands fa-html5"></i>&nbsp;<i
-              class="fa-brands fa-css3-alt"></i></span> HTML5 &amp; CSS3</div>
-        <div class="tool-chip"><span class="te"><i class="fa-brands fa-js"></i></span>
-          JavaScript</div>
-        <div class="tool-chip"><span class="te"><i class="fa-brands fa-angular"></i></span>
-          Angular Framework</div>
-        <div class="tool-chip"><span class="te"><i class="fa-solid fa-pencil"></i></span>
-          Wireframing</div>
-        <div class="tool-chip"><span class="te"><i class="fa-solid fa-repeat"></i></span> Agile
-          / Scrum</div>
-        <div class="tool-chip"><span class="te"><i class="fa-solid fa-cubes"></i></span> Design
-          Systems</div>
-        <div class="tool-chip"><span class="te"><i class="fa-solid fa-handshake"></i></span>
-          Design Handoff</div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="sec" style="padding-top:0;">
-      <div class="sec-eye reveal"><i class="fa-solid fa-arrows-spin fa-spin" style="--fa-animation-duration: 4s;"></i>
-        How I work</div>
-      <h2 class="sec-title reveal">Design process</h2>
-      <div class="row row-cols-xl-5 row-cols-md-3 row-cols-sm-2 row-cols-1 g-3 mt-4 mobile-horizontal-scroll">
-        <div class="col">
-          <div class="proc-step glass-card h-100 reveal" style="transition-delay:0s; border-radius:18px;">
-            <div class="proc-top-row">
-              <div class="proc-num">01</div>
-            </div>
-            <div class="proc-bar" style="background:var(--accent);"></div>
-            <h4>Empathize</h4>
-            <p>Conducting user interviews, surveys, and persona creation to deeply understand user needs, emotions, and
-              pain points.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="proc-step glass-card h-100 reveal" style="transition-delay:0.08s; border-radius:18px;">
-            <div class="proc-top-row">
-              <div class="proc-num">02</div>
-            </div>
-            <div class="proc-bar" style="background:var(--teal);"></div>
-            <h4>Define</h4>
-            <p>Formulating problem statements, POV framing, and user journey maps to synthesize research and pinpoint
-              core issues.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="proc-step glass-card h-100 reveal" style="transition-delay:0.16s; border-radius:18px;">
-            <div class="proc-top-row">
-              <div class="proc-num">03</div>
-            </div>
-            <div class="proc-bar" style="background:var(--amber);"></div>
-            <h4>Ideate</h4>
-            <p>Brainstorming, sketching, and crazy eights to generate a wide range of creative, out-of-the-box design
-              concepts.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="proc-step glass-card h-100 reveal" style="transition-delay:0.24s; border-radius:18px;">
-            <div class="proc-top-row">
-              <div class="proc-num">04</div>
-            </div>
-            <div class="proc-bar" style="background:var(--pink);"></div>
-            <h4>Prototype</h4>
-            <p>Building interactive, high-fidelity clickable mockups in Figma and low-fidelity paper wireframes to bring
-              ideas to life.</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="proc-step glass-card h-100 reveal" style="transition-delay:0.32s; border-radius:18px;">
-            <div class="proc-top-row">
-              <div class="proc-num">05</div>
-            </div>
-            <div class="proc-bar" style="background:var(--green);"></div>
-            <h4>Test</h4>
-            <p>Conducting usability testing, heuristic evaluation, and feedback sessions to validate and iteratively
-              refine the solution.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <div class="full-divider"></div>
-
-    <!-- ===== PROJECTS ===== -->
-    <section class="sec" id="projects">
-      <div class="sec-eye reveal"><i class="fa-solid fa-folder-open fa-beat"></i> Selected work</div>
-      <h2 class="sec-title reveal">Projects I've designed<br>&amp; built</h2>
-      <p class="sec-sub reveal">Real products across logistics, AI, e-commerce, hospitality, and SaaS — from concept to
-        delivery.</p>
-
-      <div class="projects-stack">
-        <!-- Project 1: TMS -->
-        <div class="proj-stack-card glass-card reveal" style="--index: 1;">
-          <div class="proj-stack-info">
-            <div class="proj-top">
-              <span class="proj-emoji"><i class="fa-solid fa-truck-fast"></i></span>
-              <span class="proj-badge">Web &amp; Mobile · TMS</span>
-            </div>
-            <h3>Transport Management System</h3>
-            <p>Full-cycle UI/UX for a logistics TMS covering shipment tracking, driver management, route optimization,
-              and real-time reporting dashboards for both web and mobile platforms. Designed complex data tables,
-              navigation flows, and interaction models for operational teams.</p>
-            <div class="proj-tags">
-              <span class="ptag">UX Design</span><span class="ptag">Dashboard</span><span class="ptag">Mobile
-                App</span><span class="ptag">Data Viz</span><span class="ptag">Logistics</span>
-            </div>
-          </div>
-          <div class="proj-stack-visual"
-            style="background: rgba(124, 92, 252, 0.05); border-color: rgba(124, 92, 252, 0.25);">
-            <span class="proj-large-emoji"><i class="fa-solid fa-truck-fast"></i></span>
-          </div>
+  <!-- ===== FOOTER / CONTACT ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-top">
+      <div class="footer-content">
+        <p class="footer-sub">let's build</p>
+        <h2 class="footer-headline">incredible work<br><em class="footer-script">together.</em></h2>
+        <div class="footer-actions">
+          <a href="mailto:subramaniyam3.m@gmail.com" class="btn-footer-primary"
+            id="footerEmail">subramaniyam3.m@gmail.com</a>
+          <a href="tel:+918667352542" class="btn-footer-ghost" id="footerPhone">+91 86673 52542</a>
         </div>
-
-        <!-- Project 2: AI Job Searching -->
-        <div class="proj-stack-card glass-card reveal" style="--index: 2;">
-          <div class="proj-stack-info">
-            <div class="proj-top">
-              <span class="proj-emoji"><i class="fa-solid fa-user-graduate"></i></span>
-              <span class="proj-badge">Web App · AI</span>
-            </div>
-            <h3>Student AI-Enhanced Job Searching Platform</h3>
-            <p>Designed the complete UX for an AI-powered career platform — smart job-matching feeds, personalized
-              recommendation UI, profile builder, onboarding flows, and application tracking interfaces for students.
-            </p>
-            <div class="proj-tags">
-              <span class="ptag">AI UX</span><span class="ptag">Onboarding</span><span class="ptag">Web App</span><span
-                class="ptag">Recommendation UI</span>
-            </div>
-          </div>
-          <div class="proj-stack-visual"
-            style="background: rgba(45, 212, 191, 0.05); border-color: rgba(45, 212, 191, 0.25);">
-            <span class="proj-large-emoji"><i class="fa-solid fa-user-graduate"></i></span>
-          </div>
-        </div>
-
-        <!-- Project 3: CRM Dashboard -->
-        <div class="proj-stack-card glass-card reveal" style="--index: 3;">
-          <div class="proj-stack-info">
-            <div class="proj-top">
-              <span class="proj-emoji"><i class="fa-solid fa-chart-line"></i></span>
-              <span class="proj-badge">Web App · CRM</span>
-            </div>
-            <h3>CRM Dashboard &amp; DMS</h3>
-            <p>Data-rich CRM dashboards for KPI management + Document Management System with upload flows, version
-              control, and role-based access.</p>
-            <div class="proj-tags">
-              <span class="ptag">CRM</span><span class="ptag">Dashboard</span><span class="ptag">DMS</span><span
-                class="ptag">Data Table</span>
-            </div>
-          </div>
-          <div class="proj-stack-visual"
-            style="background: rgba(251, 191, 36, 0.05); border-color: rgba(251, 191, 36, 0.25);">
-            <span class="proj-large-emoji"><i class="fa-solid fa-chart-line"></i></span>
-          </div>
-        </div>
-
-        <!-- Project 4: E-Commerce -->
-        <div class="proj-stack-card glass-card reveal" style="--index: 4;">
-          <div class="proj-stack-info">
-            <div class="proj-top">
-              <span class="proj-emoji"><i class="fa-solid fa-bag-shopping"></i></span>
-              <span class="proj-badge">Responsive Web</span>
-            </div>
-            <h3>E-Commerce Website</h3>
-            <p>Fully responsive e-commerce site — catalog, filters, PDPs, cart, and conversion-optimised checkout.
-              Designed &amp; developed in HTML/CSS/JS.</p>
-            <div class="proj-tags">
-              <span class="ptag">E-Commerce</span><span class="ptag">HTML5</span><span class="ptag">CSS3</span><span
-                class="ptag">JavaScript</span><span class="ptag">Web Dev</span>
-            </div>
-          </div>
-          <div class="proj-stack-visual"
-            style="background: rgba(45, 212, 191, 0.05); border-color: rgba(45, 212, 191, 0.25);">
-            <span class="proj-large-emoji"><i class="fa-solid fa-bag-shopping"></i></span>
-          </div>
-        </div>
-
-        <!-- Project 5: SaaS Landing Pages -->
-        <div class="proj-stack-card glass-card reveal" style="--index: 5;">
-          <div class="proj-stack-info">
-            <div class="proj-top">
-              <span class="proj-emoji"><i class="fa-solid fa-rocket"></i></span>
-              <span class="proj-badge">Landing Page</span>
-            </div>
-            <h3>SaaS Landing Pages</h3>
-            <p>High-converting SaaS pages with value props, feature sections, pricing tables, and CTA-focused layouts.
-              Pixel-perfect across all screen sizes.</p>
-            <div class="proj-tags">
-              <span class="ptag">SaaS</span><span class="ptag">Landing Page</span><span
-                class="ptag">Conversion</span><span class="ptag">Responsive</span>
-            </div>
-          </div>
-          <div class="proj-stack-visual"
-            style="background: rgba(244, 114, 182, 0.05); border-color: rgba(244, 114, 182, 0.25);">
-            <span class="proj-large-emoji"><i class="fa-solid fa-rocket"></i></span>
-          </div>
-        </div>
-
-        <!-- Project 6: Hotel Table Booking -->
-        <div class="proj-stack-card glass-card reveal" style="--index: 6;">
-          <div class="proj-stack-info">
-            <div class="proj-top">
-              <span class="proj-emoji"><i class="fa-solid fa-utensils"></i></span>
-              <span class="proj-badge">Web Design · Hospitality</span>
-            </div>
-            <h3>Hotel Table Booking Site</h3>
-            <p>Hospitality website with restaurant table reservation, menu showcase, gallery, and location pages —
-              elegant UI and mobile-first responsive design.</p>
-            <div class="proj-tags">
-              <span class="ptag">Hotel Booking</span><span class="ptag">Mobile-First</span><span class="ptag">UI
-                Design</span><span class="ptag">Front-End</span>
-            </div>
-          </div>
-          <div class="proj-stack-visual"
-            style="background: rgba(74, 222, 128, 0.05); border-color: rgba(74, 222, 128, 0.25);">
-            <span class="proj-large-emoji"><i class="fa-solid fa-utensils"></i></span>
-          </div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/subramaniyam-m" target="_blank" rel="noopener" class="fsoc"
+            id="footerLinkedin"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="fsoc"
+            id="footerBehance"><i class="fa-brands fa-behance"></i> Behance</a>
         </div>
       </div>
-    </section>
-
-    <div class="full-divider"></div>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section class="sec" id="experience">
-      <div class="sec-eye reveal"><i class="fa-solid fa-briefcase fa-fade"></i> Career</div>
-      <h2 class="sec-title reveal">Work experience</h2>
-      <p class="sec-sub reveal">Three companies, progressively growing responsibility, consistently shipping great
-        products.</p>
-
-      <div class="row g-4 mt-2">
-
-        <div class="col-lg-6 col-12">
-          <div class="exp-card glass-card h-100 reveal reveal-left">
-            <div class="exp-badge">Current role</div>
-            <div class="role">UI/UX Designer</div>
-            <div class="company">Turbocode Technology</div>
-            <div class="period">Jun 2025 - Aug 2026</div>
-            <ul>
-              <li>Designed end-to-end UX for a Transport Management System (TMS) — shipment tracking, driver management,
-                route planning, and logistics dashboards for web &amp; mobile.</li>
-              <li>Architected information structures, navigation flows, and interaction models for a Document Management
-                System (DMS).</li>
-              <li>Designed CRM dashboards with focus on data clarity, KPI visualization, and responsive layouts.</li>
-              <li>Produced high-fidelity Figma prototypes and developer-ready specs, reducing handoff back-and-forth.
-              </li>
-              <li>Conducted heuristic evaluations and usability reviews to identify friction points and propose
-                measurable improvements.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-6 col-12">
-          <div class="exp-card glass-card h-100 reveal reveal-right">
-            <div class="exp-badge">Previous role</div>
-            <div class="role">UI/UX Designer</div>
-            <div class="company">Embark Interactive</div>
-            <div class="period">Sep 2023 – Jun 2025</div>
-            <ul>
-              <li>Led UX &amp; UI design for a Student AI-Enhanced Job Searching Platform — onboarding flows, job feed
-                UI, profile builder, and recommendation interfaces.</li>
-              <li>Collaborated with PMs, engineers, and stakeholders to translate requirements into wireframes, user
-                flows, and interactive prototypes.</li>
-              <li>Created visual identity assets — logos, iconography, infographics, and social media creatives across
-                10+ client projects.</li>
-              <li>Designed &amp; built multiple client websites: e-commerce stores, SaaS landing pages, hotel booking
-                platforms, and portfolio sites.</li>
-              <li>Participated in regular design critique sessions, incorporating iterative feedback to refine interface
-                quality.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- <div class="col-12">
-          <div class="exp-card glass-card reveal">
-            <div class="exp-badge">Earlier experience</div>
-            <div class="role">Process Associate</div>
-            <div class="company">Solartis Technologies</div>
-            <div class="period">Oct 2021 – Mar 2023</div>
-            <div class="row g-3 mt-1">
-              <div class="col-lg-4 col-12"
-                style="font-size:12px;color:var(--text2);line-height:1.65;padding-left:24px;position:relative;">
-                <span
-                  style="position:absolute;left:8px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent2);display:block;"></span>
-                Managed structured communication with client-side operations teams, ensuring timely resolution of
-                queries and escalations.
-              </div>
-              <div class="col-lg-4 col-12"
-                style="font-size:12px;color:var(--text2);line-height:1.65;padding-left:24px;position:relative;">
-                <span
-                  style="position:absolute;left:8px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent2);display:block;"></span>
-                Handled query management for customer service operations, maintaining SLAs and fostering positive client
-                relationships.
-              </div>
-              <div class="col-lg-4 col-12"
-                style="font-size:12px;color:var(--text2);line-height:1.65;padding-left:24px;position:relative;">
-                <span
-                  style="position:absolute;left:8px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent2);display:block;"></span>
-                Monitored end-to-end workflow pipelines to identify bottlenecks and contribute to process optimization
-                initiatives.
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-      </div>
-    </section>
-
-    <div class="full-divider"></div>
-
-    <!-- ===== EDUCATION ===== -->
-    <section class="sec" id="education">
-      <div class="sec-eye reveal"><i class="fa-solid fa-graduation-cap fa-bounce"></i> Learning</div>
-      <h2 class="sec-title reveal">Education &amp;<br>certifications</h2>
-      <div class="row g-4 mt-2 mobile-horizontal-scroll">
-        <div class="col-md-6 col-12">
-          <div class="edu-card glass-card h-100 reveal reveal-left">
-            <span class="edu-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
-            <div class="edu-deg">UI/UX &amp; Graphic Design</div>
-            <div class="edu-inst">Image Creative, Chennai</div>
-            <div class="edu-period">Certification · 2021 – 2023</div>
-            <p style="font-size:12px;color:var(--text2);margin-top:12px;line-height:1.65;">Specialised certification in
-              UI/UX design and graphic design — covering design principles, Figma, Adobe Suite, and real-world project
-              work.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-12">
-          <div class="edu-card glass-card h-100 reveal reveal-right">
-            <span class="edu-icon"><i class="fa-solid fa-helmet-safety"></i></span>
-            <div class="edu-deg">Bachelor of Engineering</div>
-            <div class="edu-inst">Sethu Institute of Technology, Virudhunagar</div>
-            <div class="edu-period">Civil Engineering · 2016 – 2020</div>
-            <p style="font-size:12px;color:var(--text2);margin-top:12px;line-height:1.65;">Engineering background
-              building strong analytical thinking, problem-solving, and structured approach to complex challenges —
-              skills that directly inform UX strategy and systems thinking.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="full-divider"></div>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="sec" id="contact" style="padding-bottom:60px;">
-      <div class="contact-glass glass-card reveal">
-        <div class="sec-eye" style="margin-bottom:14px;"><i class="fa-solid fa-paper-plane fa-beat"></i> Let's connect
-        </div>
-        <h2>Got a project in mind?</h2>
-        <p>Available for freelance, contract, and full-time roles. If you're building something great- I'd love to be
-          part of it.</p>
-        <a href="mailto:subramaniyam3.m@gmail.com" class="btn-primary" style="margin-bottom:30px;">Say hello →</a>
-        <div class="contact-links">
-          <a href="mailto:subramaniyam3.m@gmail.com" class="c-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            subramaniyam3.m@gmail.com
-          </a>
-          <a href="tel:+918667352542" class="c-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.9 19.79 19.79 0 0 1 1.61 3.27 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            +91 86673 52542
-          </a>
-          <a href="https://www.linkedin.com/in/subramaniyam-m" target="_blank" rel="noopener noreferrer" class="c-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-            LinkedIn
-          </a>
-          <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener noreferrer" class="c-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15c0 1.66-2.69 3-6 3s-6-1.34-6-3" />
-              <path d="M3 5c0-1.66 2.69-3 6-3s6 1.34 6 3v12" />
-              <path d="M3 5v12c0 1.66 2.69 3 6 3" />
-              <path d="M3 11c0 1.66 2.69 3 6 3" />
-            </svg>
-            Behance
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-
-  <!-- <div class="sticky-resume-wrapper" id="stickyResume">
-    <button type="button" class="btn-sticky-resume open-resume-trigger" id="openResumeStickyBtn"
-      aria-label="Open Resume Popup">
-      <div class="sticky-resume-icon">
-        <i class="fa-solid fa-file-pdf"></i>
-      </div>
-      <span class="sticky-resume-text">Resume</span>
-      <span class="sticky-resume-badge">PDF</span>
-      <div class="sticky-resume-pulse"></div>
-    </button>
-  </div> -->
-
-  <!-- RESUME MODAL POPUP -->
-  <!-- <div class="resume-modal-overlay" id="resumeModal" aria-hidden="true">
-    <div class="resume-modal-backdrop" id="closeResumeBackdrop"></div>
-    <div class="resume-modal-container"> -->
-
-  <!-- Modal Header -->
-  <!-- <div class="resume-modal-header">
-        <div class="resume-modal-title">
-          <i class="fa-solid fa-file-lines text-accent me-2"></i>
-          <span class="doc-name">Subramaniyam_M_Resume.pdf</span>
-          <span class="doc-tag">3 Yrs Exp</span>
-        </div>
-        <div class="resume-modal-controls">
-          <div class="zoom-controls">
-            <button type="button" class="ctrl-btn" id="resumeZoomOut" title="Zoom Out"><i
-                class="fa-solid fa-minus"></i></button>
-            <span class="zoom-level" id="zoomLevelVal">100%</span>
-            <button type="button" class="ctrl-btn" id="resumeZoomIn" title="Zoom In"><i
-                class="fa-solid fa-plus"></i></button>
-          </div>
-          <button type="button" class="ctrl-btn btn-print-ctrl" id="resumePrintBtn" title="Print Resume">
-            <i class="fa-solid fa-print me-1"></i> Print
-          </button>
-          <button type="button" class="btn-primary btn-download-resume" id="downloadResumeBtn"
-            title="Download PDF Resume">
-            <i class="fa-solid fa-download me-1"></i> Download PDF
-          </button>
-          <button type="button" class="ctrl-btn btn-close-ctrl" id="closeResumeBtn" aria-label="Close modal">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-      </div> -->
-
-  <!-- Modal Body (Paper Viewer) -->
-  <!-- <div class="resume-modal-body" id="resumeModalBody">
-        <div class="resume-paper-wrapper" id="resumeDocumentWrapper"> -->
-
-  <!-- PAGE 1 -->
-  <!-- <div class="resume-paper-page" id="resumePage1">
-            <div class="rp-hdr">
-              <h1 class="rp-main-name">Subramaniyam M</h1>
-              <div class="rp-sub-title">UI/UX Designer | Product Designer | 3+ Years of Experience</div>
-              <div class="rp-contacts">
-                <span><i class="fa-solid fa-phone"></i> +91 86673 52542</span>
-                <span class="dot">•</span>
-                <span><i class="fa-solid fa-envelope"></i> subramaniyam3.m@gmail.com</span>
-                <span class="dot">•</span>
-                <span><a href="https://www.linkedin.com/in/subramaniyam-m" target="_blank" rel="noopener noreferrer"
-                    style="color:inherit;text-decoration:none;"><i class="fa-brands fa-linkedin"></i>
-                    linkedin.com/in/subramaniyam-m</a></span>
-                <span class="dot">•</span>
-                <span><a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener noreferrer"
-                    style="color:inherit;text-decoration:none;"><i class="fa-brands fa-behance"></i>
-                    behance.net/subramaniyam1</a></span>
-              </div>
-            </div>
-
-            <div class="rp-divider"></div>
-
-            <div class="rp-sec">
-              <h2 class="rp-heading">PROFESSIONAL SUMMARY</h2>
-              <div class="rp-sec-border"></div>
-              <p class="rp-body-text">
-                Results-driven Product Designer and UI/UX Designer with 3 years of hands-on experience designing and
-                developing intuitive digital products across web and mobile platforms. Proven expertise in end-to-end
-                design and development workflows — from user research, wireframing, and high-fidelity prototyping to
-                front-end implementation of responsive websites. Delivered diverse web projects including e-commerce
-                stores, SaaS landing pages, hotel table booking systems, CRM dashboards, Document Management Systems
-                (DMS),
-                Transport Management Systems (TMS), and AI-powered platforms. Adept at collaborating with
-                cross-functional
-                teams in agile environments, consistently balancing business goals, brand identity, and user-centered
-                design
-                principles to ship polished, conversion-focused digital experiences.
-              </p>
-            </div>
-
-            <div class="rp-sec">
-              <h2 class="rp-heading">WORK EXPERIENCE</h2>
-              <div class="rp-sec-border"></div>
-
-              <div class="rp-job-block">
-                <div class="rp-job-row">
-                  <div>
-                    <strong class="rp-role-title">Product Designer</strong>
-                    <span class="rp-company-name">Turbocode Technology</span>
-                  </div>
-                  <span class="rp-date-badge">Jun 2025 – Aug 2026</span>
-                </div>
-                <ul class="rp-list">
-                  <li>Designed end-to-end UX for a Transport Management System (TMS) covering both mobile and web
-                    platforms — including shipment tracking, driver management, route planning, and logistics reporting
-                    dashboards.</li>
-                  <li>Architected information structures, navigation flows, and interaction models for a Document
-                    Management System (DMS), streamlining document access and workflow approvals.</li>
-                  <li>Designed CRM dashboards with a focus on data clarity, KPI visualization, and responsive layouts
-                    optimized for web and mobile.</li>
-                  <li>Produced high-fidelity Figma prototypes and developer-ready design specifications, reducing
-                    back-and-forth during the handoff phase.</li>
-                  <li>Conducted heuristic evaluations and usability reviews to identify friction points and propose
-                    actionable, measurable design improvements.</li>
-                </ul>
-              </div>
-
-              <div class="rp-job-block">
-                <div class="rp-job-row">
-                  <div>
-                    <strong class="rp-role-title">UI/UX Designer</strong>
-                    <span class="rp-company-name">Embark Interactive</span>
-                  </div>
-                  <span class="rp-date-badge">sep 2024 – Jun 2025</span>
-                </div>
-                <ul class="rp-list">
-                  <li>Led UX and UI design for a Student AI-Enhanced Job Searching Platform — a smart job-matching
-                    product leveraging AI to surface personalized career opportunities for students; designed onboarding
-                    flows, job feed UI, profile builder, and recommendation interfaces.</li>
-                  <li>Collaborated with product managers, engineers, and stakeholders to translate requirements into
-                    wireframes, user flows, and interactive prototypes for web and mobile applications.</li>
-                  <li>Created comprehensive visual identity assets including logos, iconography, infographics, and
-                    social media creatives, maintaining brand consistency across 10+ client projects.</li>
-                  <li>Designed and edited video content for marketing campaigns and company presentations, contributing
-                    to improved viewer engagement and brand visibility.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="rp-footer-no">Page 1 of 3</div>
-          </div> -->
-
-  <!-- PAGE 2 -->
-  <!-- <div class="resume-paper-page" id="resumePage2">
-            <div class="rp-sec">
-              <ul class="rp-list" style="margin-top:0;">
-                <li>Designed and developed multiple client websites including e-commerce stores, SaaS landing pages,
-                  hotel table booking platforms, and business portfolio sites — handling both UI design in Figma and
-                  front-end development using HTML, CSS, and JavaScript.</li>
-                <li>Participated in regular design critique sessions, incorporating iterative feedback to continuously
-                  refine interface quality.</li>
-              </ul>
-
-
-              <div class="rp-sec">
-                <h2 class="rp-heading">KEY PROJECTS</h2>
-                <div class="rp-sec-border"></div>
-
-                <div class="rp-proj-card">
-                  <div class="rp-proj-head">Transport Management System (TMS) — Web &amp; Mobile</div>
-                  <p class="rp-proj-desc">Full-cycle UI/UX design for a logistics TMS covering shipment tracking, driver
-                    management, route optimization, and real-time reporting dashboards for both web and mobile
-                    platforms.
-                  </p>
-                </div>
-
-                <div class="rp-proj-card">
-                  <div class="rp-proj-head">Student AI-Enhanced Job Searching Platform</div>
-                  <p class="rp-proj-desc">Designed the complete user experience for an AI-powered career platform for
-                    students — including smart job-matching feeds, personalized recommendation UI, profile builder, and
-                    application tracking interfaces.</p>
-                </div>
-
-                <div class="rp-proj-card">
-                  <div class="rp-proj-head">CRM Dashboard &amp; Document Management System (DMS)</div>
-                  <p class="rp-proj-desc">Designed data-rich CRM dashboards for customer pipeline and KPI management,
-                    alongside a DMS platform with document upload flows, version control UI, and role-based access
-                    views.
-                  </p>
-                </div>
-
-                <div class="rp-proj-card">
-                  <div class="rp-proj-head">E-Commerce Website — Design &amp; Development</div>
-                  <p class="rp-proj-desc">Designed and developed a fully responsive e-commerce website with product
-                    catalog, category filters, product detail pages, shopping cart, and checkout flow. Focused on
-                    conversion-optimized UI, fast-loading layouts, and a seamless mobile shopping experience.</p>
-                </div>
-
-                <div class="rp-proj-card">
-                  <div class="rp-proj-head">SaaS Landing Page — Design &amp; Development</div>
-                  <p class="rp-proj-desc">Created high-converting SaaS landing pages with clear value propositions,
-                    feature sections, pricing tables, testimonials, and CTA-focused layouts. Built with HTML, CSS, and
-                    JavaScript ensuring pixel-perfect, responsive implementation across all screen sizes.</p>
-                </div>
-
-                <div class="rp-proj-card">
-                  <div class="rp-proj-head">Hotel Table Booking Website — Design &amp; Development</div>
-                  <p class="rp-proj-desc">Designed and developed a hospitality website featuring restaurant table
-                    reservation functionality, menu showcase, gallery, and location pages. Prioritized elegant visual
-                    design, smooth booking UX, and mobile-first responsiveness for end-users.</p>
-                </div>
-              </div>
-
-              <div class="rp-footer-no">Page 2 of 3</div>
-            </div> -->
-
-  <!-- PAGE 3 -->
-  <!-- <div class="resume-paper-page" id="resumePage3">
-              <div class="rp-sec">
-                <h2 class="rp-heading">SKILLS</h2>
-                <div class="rp-sec-border"></div>
-
-                <div class="rp-skill-row">
-                  <span class="rp-skill-cat">UX Design:</span>
-                  <span class="rp-skill-items">User Research, Wireframing, Prototyping, User Flows, Information
-                    Architecture, Interaction Design, Usability Testing, Heuristic Evaluation</span>
-                </div>
-
-                <div class="rp-skill-row">
-                  <span class="rp-skill-cat">Visual &amp; Graphic Design:</span>
-                  <span class="rp-skill-items">UI Design, Brand Identity, Logo Design, Infographic Design, Social Media
-                    Graphics, Motion Graphics, Video Editing</span>
-                </div>
-
-                <div class="rp-skill-row">
-                  <span class="rp-skill-cat">Design Tools:</span>
-                  <span class="rp-skill-items">Figma, Adobe Photoshop, Adobe Illustrator, Adobe After Effects, Adobe
-                    Premiere Pro</span>
-                </div>
-
-                <div class="rp-skill-row">
-                  <span class="rp-skill-cat">Website Design &amp; Development:</span>
-                  <span class="rp-skill-items">Responsive Web Design, E-Commerce Website Design, SaaS Landing Pages,
-                    Hotel
-                    &amp; Hospitality Websites, Booking System UI, Conversion-Optimized Design, HTML5, CSS3, JavaScript,
-                    Angular Framework</span>
-                </div>
-
-                <div class="rp-skill-row">
-                  <span class="rp-skill-cat">Methodologies:</span>
-                  <span class="rp-skill-items">Agile / Scrum, Design Systems, Component Libraries, Design Handoff</span>
-                </div>
-
-                <div class="rp-skill-row">
-                  <span class="rp-skill-cat">Soft Skills:</span>
-                  <span class="rp-skill-items">Cross-functional Collaboration, Stakeholder Communication, Problem
-                    Solving,
-                    Attention to Detail</span>
-                </div>
-              </div>
-
-              <div class="rp-sec" style="margin-top:28px;">
-                <h2 class="rp-heading">EDUCATION</h2>
-                <div class="rp-sec-border"></div>
-
-                <div class="rp-job-block">
-                  <div class="rp-job-row">
-                    <div>
-                      <strong class="rp-role-title">UI/UX &amp; Product Design</strong>
-                      <span class="rp-company-name">Certification</span>
-                    </div>
-                    <span class="rp-date-badge">2022 – 2023</span>
-                  </div>
-                  <div class="rp-proj-desc" style="margin-top:2px;">Image Creative, Chennai</div>
-                </div>
-
-                <div class="rp-job-block" style="margin-top:16px;">
-                  <div class="rp-job-row">
-                    <div>
-                      <strong class="rp-role-title">Bachelor of Engineering</strong>
-                      <span class="rp-company-name">Civil Engineering</span>
-                    </div>
-                    <span class="rp-date-badge">2016 – 2020</span>
-                  </div>
-                  <div class="rp-proj-desc" style="margin-top:2px;">Sethu Institute of Technology, Virudhunagar</div>
-                </div>
-              </div>
-
-              <div class="rp-footer-no">Page 3 of 3</div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-  <footer>
-    <p>Designed &amp; crafted by <strong style="color:var(--accent2);">Subramaniyam M</strong> &nbsp;·&nbsp; Product
-      Designer &nbsp;·&nbsp; Madurai, India &nbsp;·&nbsp; 2026</p>
-    <div class="footer-socials"
-      style="display:flex;justify-content:center;gap:16px;margin-top:12px;padding-bottom:8px;">
-      <a href="https://www.linkedin.com/in/subramaniyam-m" target="_blank" rel="noopener noreferrer"
-        aria-label="LinkedIn" style="color:var(--text2);font-size:20px;transition:color .3s,transform .3s;"
-        onmouseenter="this.style.color='var(--accent)';this.style.transform='scale(1.2)'"
-        onmouseleave="this.style.color='var(--text2)';this.style.transform='scale(1)'">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-      <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener noreferrer" aria-label="Behance"
-        style="color:var(--text2);font-size:20px;transition:color .3s,transform .3s;"
-        onmouseenter="this.style.color='var(--accent)';this.style.transform='scale(1.2)'"
-        onmouseleave="this.style.color='var(--text2)';this.style.transform='scale(1)'">
-        <i class="fa-brands fa-behance"></i>
-      </a>
-      <a href="mailto:subramaniyam3.m@gmail.com" aria-label="Email"
-        style="color:var(--text2);font-size:20px;transition:color .3s,transform .3s;"
-        onmouseenter="this.style.color='var(--accent)';this.style.transform='scale(1.2)'"
-        onmouseleave="this.style.color='var(--text2)';this.style.transform='scale(1)'">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
+    </div>
+    <div class="footer-name-big">
+      <span>SUBRAMANIYAM</span>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Subramaniyam M. All rights reserved.</span>
+      <span>Product Designer &middot; Madurai, India</span>
     </div>
   </footer>
 
-  <script src="script.js?v=3" defer></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
