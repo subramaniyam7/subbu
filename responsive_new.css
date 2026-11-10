@@ -1,0 +1,439 @@
+/* ===== RESPONSIVE — BOOTSTRAP COMPLEMENTARY ===== */
+
+/* XL: ≤1200px */
+@media (max-width: 1200px) {
+  .hero-content {
+    padding: 60px 60px 60px;
+    gap: 40px;
+  }
+
+  .hero-photo-wrap {
+    width: 300px;
+  }
+
+  .featured-inner {
+    gap: 50px;
+  }
+
+  .about-inner {
+    gap: 50px;
+  }
+
+  .testi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding: 0 50px;
+  }
+
+  .connect-section {
+    padding: 60px 50px;
+  }
+
+  .featured-section {
+    padding: 80px 50px;
+  }
+
+  .about-section {
+    padding: 80px 50px;
+  }
+
+  .footer-top {
+    padding: 80px 50px 50px;
+  }
+
+  .footer-bottom {
+    padding: 24px 50px;
+  }
+}
+
+/* LG: ≤992px — tablets landscape */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .navbar-pill {
+    max-width: 380px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 40px 40px;
+    gap: 32px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-photo-wrap {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .connect-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .connect-sticker {
+    margin: 0 auto;
+    max-width: 220px;
+    transform: rotate(0);
+  }
+
+  .connect-emoji {
+    display: none;
+  }
+
+  .featured-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .feat-visual {
+    order: -1;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-photo-col {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    padding: 0 16px;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .connect-section,
+  .featured-section,
+  .about-section {
+    padding: 60px 24px;
+  }
+
+  .footer-top {
+    padding: 60px 24px 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 20px 24px;
+  }
+
+  .exp-scroll-track {
+    animation-duration: 22s;
+  }
+}
+
+/* MD: ≤768px — tablets portrait */
+@media (max-width: 768px) {
+  .navbar-pill {
+    max-width: 320px;
+    padding: 5px 6px;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-content {
+    padding: 50px 20px 30px;
+    gap: 24px;
+  }
+
+  .hero-title {
+    letter-spacing: -2px;
+  }
+
+  .hero-photo-wrap {
+    min-height: 160px;
+  }
+
+  .proj-slide {
+    padding: 0 20px 20px;
+  }
+
+  .projects-section-header {
+    padding: 50px 20px 30px;
+  }
+
+  .bag-scene {
+    min-height: 400px;
+  }
+
+  .bag-wrap {
+    width: 180px;
+  }
+
+  .bag-img-container {
+    width: 160px;
+    height: 200px;
+  }
+
+  .tool-card {
+    width: 70px;
+    padding: 12px 10px 10px;
+  }
+
+  .tool-logo,
+  .tool-logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tool-logo-icon {
+    font-size: 17px;
+  }
+
+  .tool-card span {
+    font-size: 9px;
+  }
+
+  .t1 { left: 0%;  top: 52%; }
+  .t2 { left: 8%;  top: 70%; }
+  .t3 { left: 20%; top: 60%; }
+  .t4 { left: 33%; top: 77%; }
+  .t5 { right: 33%; top: 73%; }
+  .t6 { right: 18%; top: 57%; }
+  .t7 { right: 6%;  top: 73%; }
+  .t8 { right: 0%;  top: 53%; }
+  .t9 { left: 42%; top: 80%; }
+
+  .exp-tl-item {
+    width: 260px;
+    padding: 0 14px;
+  }
+
+  .exp-tl-card {
+    width: 220px;
+  }
+
+  .edu-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .connect-big {
+    font-size: 28px;
+  }
+
+  .footer-headline {
+    letter-spacing: -2px;
+    font-size: clamp(32px, 8vw, 60px);
+  }
+}
+
+/* SM: ≤576px — phones landscape / large phones */
+@media (max-width: 576px) {
+  .navbar-pill {
+    max-width: 290px;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding: 50px 16px 20px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 13vw, 80px);
+    letter-spacing: -2px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .connect-big {
+    font-size: 26px;
+  }
+
+  .connect-section {
+    padding: 50px 16px;
+  }
+
+  .featured-section,
+  .about-section {
+    padding: 50px 16px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .projects-main-title {
+    letter-spacing: -2px;
+  }
+
+  .skill-tags-light {
+    gap: 7px;
+  }
+
+  .stag {
+    font-size: 11px;
+    padding: 7px 14px;
+  }
+
+  .exp-tl-item {
+    width: 240px;
+    padding: 0 12px;
+  }
+
+  .exp-tl-card {
+    width: 200px;
+  }
+
+  .bag-scene {
+    min-height: 360px;
+  }
+
+  .bag-wrap {
+    width: 140px;
+  }
+
+  .bag-img-container {
+    width: 130px;
+    height: 165px;
+  }
+
+  .tool-card {
+    width: 60px;
+    padding: 10px 8px 8px;
+    border-radius: 12px;
+  }
+
+  .tool-logo,
+  .tool-logo-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .tool-logo-icon {
+    font-size: 14px;
+  }
+
+  .footer-top {
+    padding: 50px 16px 30px;
+  }
+
+  .footer-bottom {
+    padding: 16px;
+  }
+}
+
+/* XS: ≤480px — small phones */
+@media (max-width: 480px) {
+  .navbar-pill {
+    max-width: 260px;
+    gap: 6px;
+  }
+
+  .nav-avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .nav-name {
+    font-size: 14px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 12vw, 70px);
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    font-size: 14px;
+    padding: 12px 24px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .connect-section {
+    padding: 40px 14px;
+  }
+
+  .connect-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-connect-primary,
+  .btn-connect-ghost {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .experience-section {
+    padding: 60px 0 0;
+  }
+
+  .exp-scroll-outer {
+    padding: 40px 0 60px;
+  }
+
+  .exp-scroll-track {
+    animation-duration: 16s;
+  }
+
+  .edu-card {
+    padding: 24px 20px;
+  }
+
+  .testi-card {
+    padding: 24px 20px;
+  }
+}
+

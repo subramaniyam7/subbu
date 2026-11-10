@@ -11,32 +11,33 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Caveat:wght@600;700&family=Playfair+Display:ital@1&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- ===== NAVBAR (Centered Floating Pill) ===== -->
   <header class="site-header" id="siteHeader">
-    <nav class="navbar" id="navbar">
+    <nav class="navbar-pill" id="navbar">
       <!-- Brand pill: avatar + name -->
       <a href="#hero" class="nav-brand">
         <img src="images/nav_avatar.png" alt="Subramaniyam M" class="nav-avatar" />
-        <span class="nav-name">Subbu</span>
+        <span class="nav-name d-none d-sm-inline">Subbu</span>
       </a>
+      <!-- Desktop links -->
       <ul class="nav-links" id="navLinks">
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#about" class="nav-link">About Me</a></li>
       </ul>
-      <div class="nav-right">
-        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <!-- Hamburger (mobile) -->
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
-  <!-- Mobile Nav -->
+  <!-- Mobile Nav Drawer -->
   <div class="mobile-overlay" id="mobileOverlay">
     <div class="mobile-drawer" id="mobileDrawer">
       <button class="mobile-close" id="mobileClose">&#x2715;</button>
@@ -139,7 +140,8 @@
     <div class="projects-section-header">
       <div class="feat-badge">&#9733; SELECTED WORKS</div>
       <h2 class="projects-main-title">Projects I've Designed &amp; Built</h2>
-      <p class="projects-main-sub">Real products across logistics, AI, e-commerce, hospitality, and SaaS &mdash; from concept to delivery.</p>
+      <p class="projects-main-sub">Real products across logistics, AI, e-commerce, hospitality, and SaaS &mdash; from
+        concept to delivery.</p>
     </div>
 
     <!-- 3-slide horizontal scroll carousel -->
@@ -152,15 +154,17 @@
             <div class="feat-text">
               <div class="feat-badge">&#9733; FEATURED PROJECT</div>
               <h2 class="feat-title">Transport Management<br>App &mdash; TMS Platform</h2>
-        <p class="feat-desc">Full-cycle UI/UX for a logistics TMS covering shipment tracking, driver management, route
-          optimisation, and real-time reporting dashboards for web and mobile.</p>
-        <div class="feat-tags">
-          <span>UX Design</span>
-          <span>Dashboard</span>
-          <span>Mobile App</span>
-          <span>Logistics</span>
-        </div>
-              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on Behance &#x2197;</a>
+              <p class="feat-desc">Full-cycle UI/UX for a logistics TMS covering shipment tracking, driver management,
+                route
+                optimisation, and real-time reporting dashboards for web and mobile.</p>
+              <div class="feat-tags">
+                <span>UX Design</span>
+                <span>Dashboard</span>
+                <span>Mobile App</span>
+                <span>Logistics</span>
+              </div>
+              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on
+                Behance &#x2197;</a>
             </div>
             <div class="feat-visual">
               <div class="feat-mockup-wrap">
@@ -177,14 +181,16 @@
             <div class="feat-text">
               <div class="feat-badge">&#9733; WEB APP &middot; AI</div>
               <h2 class="feat-title">Student AI Job<br>Searching Platform</h2>
-              <p class="feat-desc">AI-powered career platform with smart job-matching, personalised recommendations, profile builder, onboarding flows, and application tracking — designed end to end.</p>
+              <p class="feat-desc">AI-powered career platform with smart job-matching, personalised recommendations,
+                profile builder, onboarding flows, and application tracking — designed end to end.</p>
               <div class="feat-tags">
                 <span>AI UX</span>
                 <span>Onboarding</span>
                 <span>Web App</span>
                 <span>2024</span>
               </div>
-              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on Behance &#x2197;</a>
+              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on
+                Behance &#x2197;</a>
             </div>
             <div class="feat-visual">
               <div class="feat-mockup-wrap slide2-visual">
@@ -203,14 +209,16 @@
             <div class="feat-text">
               <div class="feat-badge">&#9733; WEB APP &middot; CRM</div>
               <h2 class="feat-title">CRM Dashboard<br>&amp; E-Commerce</h2>
-              <p class="feat-desc">Data-rich CRM dashboards for KPI management + fully responsive e-commerce site with catalog, cart, and conversion-optimised checkout. Designed &amp; developed.</p>
+              <p class="feat-desc">Data-rich CRM dashboards for KPI management + fully responsive e-commerce site with
+                catalog, cart, and conversion-optimised checkout. Designed &amp; developed.</p>
               <div class="feat-tags">
                 <span>CRM</span>
                 <span>Dashboard</span>
                 <span>E-Commerce</span>
                 <span>2024–25</span>
               </div>
-              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on Behance &#x2197;</a>
+              <a href="https://www.behance.net/subramaniyam1" target="_blank" rel="noopener" class="btn-feat">View on
+                Behance &#x2197;</a>
             </div>
             <div class="feat-visual">
               <div class="feat-mockup-wrap slide3-visual">
@@ -282,41 +290,53 @@
     <div class="skills-light-bg">
       <div class="container">
 
+        <!-- Section Header -->
+        <div class="text-center" style="margin-bottom: 36px;">
+          <div class="feat-badge skills-badge">&#9733; MY TOOLKIT</div>
+          <h2 class="section-title skills-title">What tools are in my bag?</h2>
+        </div>
+
         <!-- BAG ANIMATION SCENE -->
         <div class="bag-scene" id="bagScene">
           <!-- The Bag -->
           <div class="bag-wrap" id="bagWrap">
             <div class="bag-img-container">
-              <img src="images/bag.png" alt="Designer's Bag" class="bag-img" id="bagImg"
-                style="display:none;"/>
+              <img src="images/bag.png" alt="Designer's Bag" class="bag-img" id="bagImg" style="display:none;" />
               <!-- Inline SVG backpack illustration (shown when no bag.png) -->
               <div class="bag-fallback" id="bagFallback" style="display:flex;">
-                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;filter:drop-shadow(0 24px 48px rgba(0,0,0,.35))">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg"
+                  style="width:100%;height:100%;filter:drop-shadow(0 24px 48px rgba(0,0,0,.35))">
                   <!-- Bag body -->
-                  <rect x="30" y="70" width="140" height="165" rx="22" fill="#2a2a2a"/>
+                  <rect x="30" y="70" width="140" height="165" rx="22" fill="#2a2a2a" />
                   <!-- Bag sheen -->
-                  <rect x="30" y="70" width="140" height="165" rx="22" fill="url(#bagGrad)" opacity=".7"/>
+                  <rect x="30" y="70" width="140" height="165" rx="22" fill="url(#bagGrad)" opacity=".7" />
                   <!-- Front pocket -->
-                  <rect x="42" y="118" width="116" height="70" rx="12" fill="#1e1e1e" stroke="#3a3a3a" stroke-width="1.5"/>
+                  <rect x="42" y="118" width="116" height="70" rx="12" fill="#1e1e1e" stroke="#3a3a3a"
+                    stroke-width="1.5" />
                   <!-- Pocket zipper -->
-                  <line x1="50" y1="118" x2="150" y2="118" stroke="#555" stroke-width="2" stroke-linecap="round"/>
-                  <circle cx="100" cy="118" r="4" fill="#888"/>
+                  <line x1="50" y1="118" x2="150" y2="118" stroke="#555" stroke-width="2" stroke-linecap="round" />
+                  <circle cx="100" cy="118" r="4" fill="#888" />
                   <!-- Top handle -->
-                  <path d="M72 70 Q72 50 100 50 Q128 50 128 70" fill="none" stroke="#1e1e1e" stroke-width="12" stroke-linecap="round"/>
-                  <path d="M72 70 Q72 52 100 52 Q128 52 128 70" fill="none" stroke="#3a3a3a" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M72 70 Q72 50 100 50 Q128 50 128 70" fill="none" stroke="#1e1e1e" stroke-width="12"
+                    stroke-linecap="round" />
+                  <path d="M72 70 Q72 52 100 52 Q128 52 128 70" fill="none" stroke="#3a3a3a" stroke-width="6"
+                    stroke-linecap="round" />
                   <!-- Shoulder straps -->
-                  <path d="M55 78 C45 90 38 130 42 190" fill="none" stroke="#1e1e1e" stroke-width="16" stroke-linecap="round"/>
-                  <path d="M145 78 C155 90 162 130 158 190" fill="none" stroke="#1e1e1e" stroke-width="16" stroke-linecap="round"/>
+                  <path d="M55 78 C45 90 38 130 42 190" fill="none" stroke="#1e1e1e" stroke-width="16"
+                    stroke-linecap="round" />
+                  <path d="M145 78 C155 90 162 130 158 190" fill="none" stroke="#1e1e1e" stroke-width="16"
+                    stroke-linecap="round" />
                   <!-- Logo text -->
-                  <text x="100" y="170" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#e44" letter-spacing="1">FIGMA</text>
+                  <text x="100" y="170" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600"
+                    fill="#e44" letter-spacing="1">Tools</text>
                   <!-- Side pockets hint -->
-                  <rect x="20" y="100" width="12" height="50" rx="6" fill="#222"/>
-                  <rect x="168" y="100" width="12" height="50" rx="6" fill="#222"/>
+                  <rect x="20" y="100" width="12" height="50" rx="6" fill="#222" />
+                  <rect x="168" y="100" width="12" height="50" rx="6" fill="#222" />
                   <!-- Gradient def -->
                   <defs>
                     <linearGradient id="bagGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#5a5a5a"/>
-                      <stop offset="60%" stop-color="#2a2a2a" stop-opacity="0"/>
+                      <stop offset="0%" stop-color="#5a5a5a" />
+                      <stop offset="60%" stop-color="#2a2a2a" stop-opacity="0" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -336,67 +356,66 @@
           <div class="tools-drop-zone" id="toolsDropZone">
             <div class="tool-icon-wrap t1" data-delay="0">
               <div class="tool-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="tool-logo"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"
+                  class="tool-logo" />
                 <span>Figma</span>
               </div>
             </div>
             <div class="tool-icon-wrap t2" data-delay="80">
               <div class="tool-card">
-                <!-- Adobe Photoshop real logo -->
-                <svg class="tool-logo" viewBox="0 0 240 234" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#001e36" d="M0 0h240v234H0z"/>
-                  <path fill="#31a8ff" d="M54.2 168.4V71.2c0-.8.4-1.3 1.2-1.3 2.1 0 4.1 0 6.9-.1 2.9-.1 5.9-.1 9.2-.2 3.3-.1 6.8-.1 10.6-.2 3.8-.1 7.5-.1 11.3-.1 10.2 0 18.6 1.3 25.4 4 6.3 2.4 11.6 6.1 15.7 10.9 3.9 4.6 6.8 10 8.5 16 1.7 6 2.6 12.3 2.6 18.6 0 12.9-2.9 23.3-8.6 31-5.8 7.7-13.7 13.2-23.1 16-5.3 1.6-11.4 2.3-18.2 2.3-2.9 0-5.1 0-6.7-.1v50.4c.1.8-.5 1.4-1.3 1.5H55.5c-.9 0-1.3-.4-1.3-1.3zm22.8-79.9v40.7c1.9.1 3.6.2 5.1.2h7.1c4.3 0 8.5-.7 12.4-2.2 3.5-1.3 6.6-3.5 9-6.4 2.3-2.9 3.5-6.9 3.5-12 0-4.2-.8-7.9-2.3-10.9-1.5-3-3.9-5.5-7-7.3-3.3-1.9-7.8-2.8-13.5-2.8-2.7 0-5.2 0-7.4.1-2.2.1-5.8.5-6.9.6z"/>
-                </svg>
-                <span>Photoshop</span>
+                <img src="images/illustrator_icon.png" alt="Adobe Illustrator" class="tool-logo" />
+                <span>Illustrator</span>
               </div>
             </div>
             <div class="tool-icon-wrap t3" data-delay="160">
               <div class="tool-card">
-                <!-- Adobe Illustrator real logo -->
-                <svg class="tool-logo" viewBox="0 0 240 234" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#1a0a00" d="M0 0h240v234H0z"/>
-                  <path fill="#ff9a00" d="M101 148.3H63.5l-8 25.6c-.2.9-1 1.5-1.9 1.5H35.3c-1.1 0-1.4-.6-1.1-1.8l34-97.6c.4-1 .7-2.1 1-3.3.4-2.3.6-4.6.6-6.9-.1-.5.3-1 .8-1.1h25.4c.7 0 1.1.3 1.2.9l38.4 108.1c.3 1.1 0 1.7-1 1.7h-22.5c-.8.1-1.5-.4-1.7-1.1l-9.4-26.1zm-31.4-19.8H94l-7.4-23.9c-.8-2.5-1.7-5.4-2.5-8.4-.9-3-1.7-5.9-2.4-8.6-.7 2.8-1.4 5.7-2.2 8.6-.8 3-1.6 5.9-2.4 8.5l-7.5 23.8zm86.2-55.6c-2.4.1-4.8-.8-6.5-2.5-1.7-1.8-2.5-4.2-2.5-6.5-.1-2.5.9-4.9 2.7-6.6 1.9-1.7 4.3-2.6 6.8-2.5 3 0 5.4.8 7 2.5 1.7 1.7 2.6 4.1 2.5 6.6.1 2.4-.9 4.7-2.6 6.4-1.9 1.7-4.4 2.6-7.4 2.6zm-11.4 75.4V97.4c0-1 .4-1.4 1.4-1.4h20.5c1 0 1.4.5 1.4 1.4v50.9c0 1.1-.4 1.5-1.4 1.5h-20.3c-1.1.1-1.6-.4-1.6-1.5z"/>
-                </svg>
-                <span>Illustrator</span>
+                <img src="images/aftereffects_icon.png" alt="Adobe After Effects" class="tool-logo" />
+                <span>After Effects</span>
               </div>
             </div>
             <div class="tool-icon-wrap t4" data-delay="240">
               <div class="tool-card">
-                <!-- Adobe After Effects real logo -->
-                <svg class="tool-logo" viewBox="0 0 240 234" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#00005b" d="M0 0h240v234H0z"/>
-                  <path fill="#9999ff" d="M71.8 148.3H34.4l-8 25.6c-.2.9-1 1.5-1.9 1.5H6.2c-1.1 0-1.4-.6-1.1-1.8l34-97.6c.4-1 .7-2.1 1-3.3.4-2.3.6-4.6.6-6.9-.1-.5.3-1 .8-1.1h25.4c.7 0 1.1.3 1.2.9l38.4 108.1c.3 1.1 0 1.7-1 1.7H83c-.8.1-1.5-.4-1.7-1.1l-9.5-26.1zM40.4 128.5h23.4l-7.4-23.9c-.8-2.5-1.7-5.4-2.5-8.4-.9-3-1.7-5.9-2.4-8.6-.7 2.8-1.4 5.7-2.2 8.6-.8 3-1.6 5.9-2.4 8.5l-7.5 23.8zm108.4 18.2c2.5 1.4 5.5 2.5 9.1 3.3 3.5.8 7.1 1.2 10.7 1.2 2.2 0 4.4-.2 6.5-.6 2-.3 3.9-1 5.6-2 1.6-.9 2.9-2.2 3.8-3.8.9-1.7 1.4-3.8 1.4-6.1 0-2.2-.5-4.1-1.5-5.7-1.1-1.7-2.5-3.2-4.2-4.4-1.9-1.3-4-2.5-6.3-3.5-2.3-1-4.8-2.1-7.3-3.2-3.3-1.4-6.5-3-9.5-4.8-2.8-1.7-5.3-3.7-7.5-6.1-2.1-2.3-3.8-5-5-8-.9-3.4-1.4-7-1.4-10.7 0-5.1 1-9.6 3-13.4 1.9-3.7 4.6-6.9 7.9-9.4 3.3-2.5 7.2-4.3 11.4-5.4 4.4-1.1 9-1.7 13.6-1.7 4.5 0 9 .4 13.4 1.2 3.4.6 6.7 1.6 9.8 3 .8.4 1.4 1 1.7 1.7.2.6.3 1.2.3 1.8v17.8c0 .4-.1.9-.4 1.2-.3.3-.7.4-1.1.4-.4 0-.8-.1-1.1-.3-2.5-1.3-5.2-2.3-8-3.1-3.2-.9-6.5-1.3-9.9-1.3-2 0-4 .2-5.9.7-1.6.4-3.1 1.1-4.4 2-1.1.8-2 1.9-2.6 3.1-.6 1.3-.9 2.6-.8 4 0 1.9.5 3.7 1.5 5.3 1.1 1.6 2.5 3 4.2 4.1 1.9 1.3 4.1 2.5 6.6 3.6 2.5 1.1 5.1 2.3 7.9 3.5 3.2 1.4 6.3 3 9.2 4.8 2.8 1.7 5.2 3.8 7.3 6.2 2.1 2.4 3.7 5.1 4.8 8.1 1.2 3.4 1.8 7 1.7 10.7.1 5.5-1 10.9-3.3 15.9-2.1 4.3-5.2 8.1-9.1 11-4 2.9-8.6 5-13.5 6.2-5.4 1.3-10.9 2-16.5 1.9-5.1 0-10.3-.5-15.3-1.5-3.8-.7-7.5-1.9-11-3.5-.8-.4-1.5-1-1.9-1.8-.3-.6-.4-1.3-.4-2v-18.3c0-.5.2-1 .5-1.4.4-.3.9-.4 1.4-.2.1.1.1.2.1.2z"/>
-                </svg>
-                <span>After Effects</span>
+                <img src="images/photoshop_icon.png" alt="Adobe Photoshop" class="tool-logo" />
+                <span>Photoshop</span>
               </div>
             </div>
             <div class="tool-icon-wrap t5" data-delay="100">
               <div class="tool-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="tool-logo"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+                  class="tool-logo" />
                 <span>HTML5</span>
               </div>
             </div>
             <div class="tool-icon-wrap t6" data-delay="200">
               <div class="tool-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="tool-logo"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+                  class="tool-logo" />
                 <span>CSS3</span>
               </div>
             </div>
             <div class="tool-icon-wrap t7" data-delay="300">
               <div class="tool-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" class="tool-logo"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JS" class="tool-logo" />
                 <span>JavaScript</span>
               </div>
             </div>
             <div class="tool-icon-wrap t8" data-delay="50">
               <div class="tool-card">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="tool-logo"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                  alt="Angular" class="tool-logo" />
                 <span>Angular</span>
               </div>
             </div>
             <div class="tool-icon-wrap t9" data-delay="180">
               <div class="tool-card">
-                <div class="tool-logo-icon ux-col"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <!-- Maze – UX Research tool official SVG -->
+                <svg class="tool-logo" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="128" height="128" rx="24" fill="#6833FF" />
+                  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif"
+                    font-weight="900" font-size="62" fill="#fff" letter-spacing="-2">M</text>
+                  <rect x="24" y="88" width="80" height="8" rx="4" fill="rgba(255,255,255,0.35)" />
+                </svg>
                 <span>UX Research</span>
               </div>
             </div>
@@ -406,12 +425,12 @@
         <!-- Skill labels row below -->
         <div class="skill-tags-light">
           <span class="stag">Product Design</span>
-          <span class="stag orange">UI/UX Design</span>
+          <span class="stag">UI/UX Design</span>
           <span class="stag">Design Systems</span>
-          <span class="stag orange">Prototyping</span>
+          <span class="stag">Prototyping</span>
           <span class="stag">Wireframing</span>
           <span class="stag">Mobile App Design</span>
-          <span class="stag orange">Web Development</span>
+          <span class="stag">Web Development</span>
           <span class="stag">Design Thinking</span>
           <span class="stag">User Testing</span>
         </div>
@@ -426,19 +445,33 @@
       <h2 class="section-title exp-main-title">Check Out Some<br><em class="exp-script">Journey</em></h2>
     </div>
 
-    <!-- Horizontal scroll timeline -->
-    <div class="exp-timeline-outer">
-      <div class="exp-timeline-track" id="expTrack">
+    <!-- Auto-scrolling experience marquee on mouse enter -->
+    <div class="exp-scroll-outer" id="expScrollOuter">
+      <div class="exp-scroll-track" id="expScrollTrack">
 
-        <!-- Card 1: Turbocode -->
-        <div class="exp-tl-item slide-from-right" id="exp-turbocode">
-          <div class="exp-tl-date current-pill">
-            <span class="tl-dot-green"></span>
-            March'25 &ndash; <strong>Present</strong>
+        <!-- ===== SET 1 ===== -->
+        <!-- Card 1: Turbocode (Pill Top, Card Bottom) -->
+        <div class="exp-tl-item exp-item-pill-top">
+          <div class="exp-tl-date pill-green">
+            March'25 &ndash; <strong class="pill-present">Present</strong>
           </div>
-          <div class="exp-tl-connector"></div>
-          <div class="exp-tl-card">
-            <div class="exp-tl-logo tc-logo-icon"><i class="fa-solid fa-code"></i></div>
+          <div class="exp-tl-connector conn-green conn-dot-top">
+            <span class="exp-tl-dot"></span>
+            <span class="exp-tl-line"></span>
+          </div>
+          <div class="exp-tl-card card-tilt-left">
+            <div class="exp-tl-logo tc-logo-box">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 6C6 4.89543 6.89543 4 8 4H24C25.1046 4 26 4.89543 26 6V20C26 21.1046 25.1046 22 24 22H14L9 26V22H8C6.89543 22 6 21.1046 6 20V6Z"
+                  stroke="#0e3e78" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" />
+                <path d="M12 10.5L9.5 13L12 15.5" stroke="#0e3e78" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M20 10.5L22.5 13L20 15.5" stroke="#0e3e78" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M17 9.5L15 16.5" stroke="#0e3e78" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
             <div class="exp-tl-info">
               <h3>Product Designer</h3>
               <p class="etl-company">Turbocode Technologies</p>
@@ -447,30 +480,46 @@
           </div>
         </div>
 
-        <!-- Card 2: Embark Senior -->
-        <div class="exp-tl-item slide-from-right" id="exp-embark-senior">
-          <div class="exp-tl-date">
-            Jan'24 &ndash; Jun'24
-          </div>
-          <div class="exp-tl-connector"></div>
-          <div class="exp-tl-card">
-            <div class="exp-tl-logo ei-logo-icon"><span>embark</span></div>
+        <!-- Card 2: Embark Senior (Card Top, Pill Bottom) -->
+        <div class="exp-tl-item exp-item-card-top">
+          <div class="exp-tl-card card-tilt-right">
+            <div class="exp-tl-logo embark-logo-box">
+              <div class="embark-logo-inner">
+                <span class="embark-text">embark</span>
+                <span class="embark-sub">INTERACTIVE</span>
+              </div>
+            </div>
             <div class="exp-tl-info">
               <h3>Sr. UI/UX Designer</h3>
               <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
               <p class="etl-location">Madurai</p>
             </div>
           </div>
+          <div class="exp-tl-connector conn-blue conn-dot-bottom">
+            <span class="exp-tl-line"></span>
+            <span class="exp-tl-dot"></span>
+          </div>
+          <div class="exp-tl-date pill-blue pill-tilt-left">
+            Jan'24 &ndash; Jun'24
+          </div>
         </div>
 
-        <!-- Card 3: Embark Junior -->
-        <div class="exp-tl-item slide-from-right" id="exp-embark-junior">
-          <div class="exp-tl-date">
+        <!-- Card 3: Embark Junior (Pill Top, Card Bottom) -->
+        <div class="exp-tl-item exp-item-pill-top">
+          <div class="exp-tl-date pill-blue">
             Sep'23 &ndash; Dec'23
           </div>
-          <div class="exp-tl-connector"></div>
-          <div class="exp-tl-card">
-            <div class="exp-tl-logo ei-logo-icon"><span>embark</span></div>
+          <div class="exp-tl-connector conn-blue conn-dot-top">
+            <span class="exp-tl-dot"></span>
+            <span class="exp-tl-line"></span>
+          </div>
+          <div class="exp-tl-card card-tilt-left">
+            <div class="exp-tl-logo embark-logo-box">
+              <div class="embark-logo-inner">
+                <span class="embark-text">embark</span>
+                <span class="embark-sub">INTERACTIVE</span>
+              </div>
+            </div>
             <div class="exp-tl-info">
               <h3>Jr. UI/UX Designer</h3>
               <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
@@ -479,37 +528,348 @@
           </div>
         </div>
 
-      </div><!-- end track -->
-    </div><!-- end outer -->
+        <!-- ===== SET 2 ===== -->
+        <div class="exp-tl-item exp-item-pill-top">
+          <div class="exp-tl-date pill-green">
+            March'25 &ndash; <strong class="pill-present">Present</strong>
+          </div>
+          <div class="exp-tl-connector conn-green conn-dot-top">
+            <span class="exp-tl-dot"></span>
+            <span class="exp-tl-line"></span>
+          </div>
+          <div class="exp-tl-card card-tilt-left">
+            <div class="exp-tl-logo tc-logo-box">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 6C6 4.89543 6.89543 4 8 4H24C25.1046 4 26 4.89543 26 6V20C26 21.1046 25.1046 22 24 22H14L9 26V22H8C6.89543 22 6 21.1046 6 20V6Z"
+                  stroke="#0e3e78" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" />
+                <path d="M12 10.5L9.5 13L12 15.5" stroke="#0e3e78" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M20 10.5L22.5 13L20 15.5" stroke="#0e3e78" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M17 9.5L15 16.5" stroke="#0e3e78" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Product Designer</h3>
+              <p class="etl-company">Turbocode Technologies</p>
+              <p class="etl-location">Coimbatore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-tl-item exp-item-card-top">
+          <div class="exp-tl-card card-tilt-right">
+            <div class="exp-tl-logo embark-logo-box">
+              <div class="embark-logo-inner">
+                <span class="embark-text">embark</span>
+                <span class="embark-sub">INTERACTIVE</span>
+              </div>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Sr. UI/UX Designer</h3>
+              <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
+              <p class="etl-location">Madurai</p>
+            </div>
+          </div>
+          <div class="exp-tl-connector conn-blue conn-dot-bottom">
+            <span class="exp-tl-line"></span>
+            <span class="exp-tl-dot"></span>
+          </div>
+          <div class="exp-tl-date pill-blue pill-tilt-left">
+            Jan'24 &ndash; Jun'24
+          </div>
+        </div>
+
+        <div class="exp-tl-item exp-item-pill-top">
+          <div class="exp-tl-date pill-blue">
+            Sep'23 &ndash; Dec'23
+          </div>
+          <div class="exp-tl-connector conn-blue conn-dot-top">
+            <span class="exp-tl-dot"></span>
+            <span class="exp-tl-line"></span>
+          </div>
+          <div class="exp-tl-card card-tilt-left">
+            <div class="exp-tl-logo embark-logo-box">
+              <div class="embark-logo-inner">
+                <span class="embark-text">embark</span>
+                <span class="embark-sub">INTERACTIVE</span>
+              </div>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Jr. UI/UX Designer</h3>
+              <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
+              <p class="etl-location">Madurai</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SET 3 (Duplicates for infinite seamless scroll) ===== -->
+        <div class="exp-tl-item exp-item-pill-top" aria-hidden="true">
+          <div class="exp-tl-date pill-green">
+            March'25 &ndash; <strong class="pill-present">Present</strong>
+          </div>
+          <div class="exp-tl-connector conn-green conn-dot-top">
+            <span class="exp-tl-dot"></span>
+            <span class="exp-tl-line"></span>
+          </div>
+          <div class="exp-tl-card card-tilt-left">
+            <div class="exp-tl-logo tc-logo-box">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 6C6 4.89543 6.89543 4 8 4H24C25.1046 4 26 4.89543 26 6V20C26 21.1046 25.1046 22 24 22H14L9 26V22H8C6.89543 22 6 21.1046 6 20V6Z"
+                  stroke="#0e3e78" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" />
+                <path d="M12 10.5L9.5 13L12 15.5" stroke="#0e3e78" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M20 10.5L22.5 13L20 15.5" stroke="#0e3e78" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M17 9.5L15 16.5" stroke="#0e3e78" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Product Designer</h3>
+              <p class="etl-company">Turbocode Technologies</p>
+              <p class="etl-location">Coimbatore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-tl-item exp-item-card-top" aria-hidden="true">
+          <div class="exp-tl-card card-tilt-right">
+            <div class="exp-tl-logo embark-logo-box">
+              <div class="embark-logo-inner">
+                <span class="embark-text">embark</span>
+                <span class="embark-sub">INTERACTIVE</span>
+              </div>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Sr. UI/UX Designer</h3>
+              <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
+              <p class="etl-location">Madurai</p>
+            </div>
+          </div>
+          <div class="exp-tl-connector conn-blue conn-dot-bottom">
+            <span class="exp-tl-line"></span>
+            <span class="exp-tl-dot"></span>
+          </div>
+          <div class="exp-tl-date pill-blue pill-tilt-left">
+            Jan'24 &ndash; Jun'24
+          </div>
+        </div>
+
+        <div class="exp-tl-item exp-item-pill-top" aria-hidden="true">
+          <div class="exp-tl-date pill-blue">
+            Sep'23 &ndash; Dec'23
+          </div>
+          <div class="exp-tl-connector conn-blue conn-dot-top">
+            <span class="exp-tl-dot"></span>
+            <span class="exp-tl-line"></span>
+          </div>
+          <div class="exp-tl-card card-tilt-left">
+            <div class="exp-tl-logo embark-logo-box">
+              <div class="embark-logo-inner">
+                <span class="embark-text">embark</span>
+                <span class="embark-sub">INTERACTIVE</span>
+              </div>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Jr. UI/UX Designer</h3>
+              <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
+              <p class="etl-location">Madurai</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SET 4 (Duplicates for infinite seamless scroll) ===== -->
+        <div class="exp-tl-item exp-item-pill-top" aria-hidden="true">
+          <div class="exp-tl-date pill-green">
+            March'25 &ndash; <strong class="pill-present">Present</strong>
+          </div>
+          <div class="exp-tl-connector conn-green conn-dot-top">
+            <span class="exp-tl-dot"></span>
+            <span class="exp-tl-line"></span>
+          </div>
+          <div class="exp-tl-card card-tilt-left">
+            <div class="exp-tl-logo tc-logo-box">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6 6C6 4.89543 6.89543 4 8 4H24C25.1046 4 26 4.89543 26 6V20C26 21.1046 25.1046 22 24 22H14L9 26V22H8C6.89543 22 6 21.1046 6 20V6Z"
+                  stroke="#0e3e78" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="#ffffff" />
+                <path d="M12 10.5L9.5 13L12 15.5" stroke="#0e3e78" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M20 10.5L22.5 13L20 15.5" stroke="#0e3e78" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M17 9.5L15 16.5" stroke="#0e3e78" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Product Designer</h3>
+              <p class="etl-company">Turbocode Technologies</p>
+              <p class="etl-location">Coimbatore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-tl-item exp-item-card-top" aria-hidden="true">
+          <div class="exp-tl-card card-tilt-right">
+            <div class="exp-tl-logo embark-logo-box">
+              <div class="embark-logo-inner">
+                <span class="embark-text">embark</span>
+                <span class="embark-sub">INTERACTIVE</span>
+              </div>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Sr. UI/UX Designer</h3>
+              <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
+              <p class="etl-location">Madurai</p>
+            </div>
+          </div>
+          <div class="exp-tl-connector conn-blue conn-dot-bottom">
+            <span class="exp-tl-line"></span>
+            <span class="exp-tl-dot"></span>
+          </div>
+          <div class="exp-tl-date pill-blue pill-tilt-left">
+            Jan'24 &ndash; Jun'24
+          </div>
+        </div>
+
+        <div class="exp-tl-item exp-item-pill-top" aria-hidden="true">
+          <div class="exp-tl-date pill-blue">
+            Sep'23 &ndash; Dec'23
+          </div>
+          <div class="exp-tl-connector conn-blue conn-dot-top">
+            <span class="exp-tl-dot"></span>
+            <span class="exp-tl-line"></span>
+          </div>
+          <div class="exp-tl-card card-tilt-left">
+            <div class="exp-tl-logo embark-logo-box">
+              <div class="embark-logo-inner">
+                <span class="embark-text">embark</span>
+                <span class="embark-sub">INTERACTIVE</span>
+              </div>
+            </div>
+            <div class="exp-tl-info">
+              <h3>Jr. UI/UX Designer</h3>
+              <p class="etl-company">Embark Interactive Pvt. Ltd.</p>
+              <p class="etl-location">Madurai</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end scroll track -->
+    </div><!-- end scroll outer -->
   </section>
 
   <!-- ===== EDUCATION ===== -->
   <section class="education-section" id="education">
     <div class="container">
-      <div class="feat-badge">&#9733; EDUCATION</div>
-      <h2 class="section-title">My Years Of Daily Learning</h2>
-      <div class="edu-grid">
-        <div class="edu-card reveal">
-          <div class="edu-icon" style="background:#f9731620;color:#f97316;"><i
-              class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <div class="edu-info">
-            <span class="edu-badge">Certification</span>
-            <h3>UI/UX &amp; Graphic Design</h3>
-            <p>Image Creative, Madurai</p>
-            <span class="edu-year">2021 &ndash; 2023</span>
-          </div>
-        </div>
-        <div class="edu-card reveal">
-          <div class="edu-icon" style="background:#6366f120;color:#6366f1;"><i class="fa-solid fa-helmet-safety"></i>
-          </div>
-          <div class="edu-info">
-            <span class="edu-badge">Bachelor's Degree</span>
-            <h3>Bachelor of Engineering</h3>
-            <p>Sethu Institute of Technology, Virudhunagar &middot; Civil Engineering</p>
-            <span class="edu-year">2016 &ndash; 2020</span>
-          </div>
-        </div>
+      <div class="edu-header text-center">
+        <div class="feat-badge">&#9733; EDUCATION</div>
+        <h2 class="section-title">My Years Of Daily Learning</h2>
       </div>
+
+      <!-- 3 Tabs Navigation -->
+      <!-- <div class="edu-tabs-wrapper">
+        <div class="edu-tabs" id="eduTabs">
+          <button class="edu-tab active" data-index="0" type="button">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> UI/UX Design
+          </button>
+          <button class="edu-tab" data-index="1" type="button">
+            <i class="fa-solid fa-helmet-safety"></i> Civil Engineering
+          </button>
+          <button class="edu-tab" data-index="all" type="button">
+            <i class="fa-solid fa-graduation-cap"></i> All Education
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Slider Wrapper with Prev/Next buttons on both sides -->
+      <div class="edu-slider-wrapper">
+        <!-- Prev Button on Left Side -->
+        <button class="edu-nav-btn edu-prev-btn" id="eduPrevBtn" type="button" aria-label="Previous card">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- Slider Track with 2 Cards -->
+        <div class="edu-slider-track" id="eduSliderTrack">
+
+          <!-- Card 1: UI/UX & Graphic Design (Image Creative Education) -->
+          <div class="edu-slide" data-index="0">
+            <div class="edu-big-card">
+              <div class="edu-card-content">
+                <span class="edu-card-inst">Image Creative Education</span>
+                <h3 class="edu-card-degree">UI/UX &amp; Graphic Design</h3>
+                <div class="edu-card-pill-row">
+                  <span class="edu-loc-pill">Madurai</span>
+                  <span class="edu-year-pill">2021 &ndash; 2023</span>
+                  <span class="edu-type-pill">Professional Certification</span>
+                </div>
+                <p class="edu-card-desc">
+                  Following my engineering degree, I pursued formal professional training in UI/UX &amp; Graphic Design
+                  at Image Creative Education in Madurai. This intensive program transformed my passion for visual
+                  problem-solving into a structured, user-centered product methodology.
+                </p>
+                <p class="edu-card-desc">
+                  I spent these two years mastering user research, wireframing, high-fidelity prototyping, typography,
+                  and scalable design systems. Combining an analytical engineering mindset with deep visual design craft
+                  allowed me to bridge the gap between user needs, business goals, and technical execution.
+                </p>
+              </div>
+              <div class="edu-card-visual">
+                <div class="edu-img-wrap">
+                  <img src="images/subramaniyam_standing.png" alt="Subramaniyam M — UI/UX Designer"
+                    class="edu-card-img" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: B.E (Civil Engineering) (Sethu Institute of Technology) -->
+          <div class="edu-slide" data-index="1">
+            <div class="edu-big-card">
+              <div class="edu-card-content">
+                <span class="edu-card-inst">Sethu Institute of Technology</span>
+                <h3 class="edu-card-degree">B.E (Civil Engineering)</h3>
+                <div class="edu-card-pill-row">
+                  <span class="edu-loc-pill">Madurai</span>
+                  <span class="edu-year-pill">2016 &ndash; 2020</span>
+                  <span class="edu-type-pill">Bachelor's Degree</span>
+                </div>
+                <p class="edu-card-desc">
+                  My journey into design started long before product design. I began with graphic design at a young age,
+                  spending years experimenting with Photoshop, branding projects, and freelance work. During college, I
+                  worked part-time designing websites, emails, and social media campaigns, which helped me build a
+                  strong foundation across different areas of design.
+                </p>
+                <p class="edu-card-desc">
+                  Today, I work on consumer and enterprise products, where I enjoy turning complex workflows into
+                  experiences that feel simple and intuitive. I'm particularly drawn to problems that sit at the
+                  intersection of user needs, business goals, and technical constraints.
+                </p>
+              </div>
+              <div class="edu-card-visual">
+                <div class="edu-img-wrap edu-img-wrap-civil">
+                  <img src="images/civil_profile.jpg" alt="Subramaniyam M — B.E Civil Engineering"
+                    class="edu-card-img edu-card-img-civil" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end edu-slider-track -->
+
+        <!-- Next Button on Right Side -->
+        <button class="edu-nav-btn edu-next-btn" id="eduNextBtn" type="button" aria-label="Next card">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div><!-- end edu-slider-wrapper -->
+
+      <!-- Dots Indicators -->
+      <div class="edu-dots" id="eduDots">
+        <button class="edu-dot active" data-index="0" type="button" aria-label="Card 1"></button>
+        <button class="edu-dot" data-index="1" type="button" aria-label="Card 2"></button>
+      </div>
+
     </div>
   </section>
 
@@ -588,6 +948,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 

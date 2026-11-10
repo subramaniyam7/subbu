@@ -214,22 +214,54 @@ console.log('%c👋 Hey there! Built with care by Subramaniyam M.', 'color:#f973
   });
 })();
 
-// ===== EXPERIENCE TIMELINE — RIGHT TO LEFT ON SCROLL =====
+// ===== EXPERIENCE AUTO-SCROLL — triggers on mouse enter =====
 (function () {
-  const items = document.querySelectorAll('.exp-tl-item');
-  if (!items.length) return;
+  const expSection = document.getElementById('experience');
+  const scrollTrack = document.getElementById('expScrollTrack');
+  const scrollOuter = document.getElementById('expScrollOuter');
+  if (!expSection || !scrollTrack) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('tl-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+  function startScroll() {
+    expSection.classList.add('is-scrolling');
+  }
 
-  items.forEach(item => observer.observe(item));
+  function stopScroll() {
+    expSection.classList.remove('is-scrolling');
+  }
+
+  // Scroll from right to left when mouse enters into section
+  expSection.addEventListener('mouseenter', startScroll);
+  expSection.addEventListener('mousemove', startScroll);
+  expSection.addEventListener('mouseleave', stopScroll);
+
+  // Mobile / touch devices: auto-scroll when in view and handle touch
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
+  if (isTouch) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startScroll();
+        } else {
+          stopScroll();
+        }
+      });
+    }, { threshold: 0.15 });
+
+    observer.observe(expSection);
+
+    let touchStartX = 0;
+    if (scrollOuter) {
+      scrollOuter.addEventListener('touchstart', () => {
+        stopScroll();
+      }, { passive: true });
+
+      scrollOuter.addEventListener('touchend', () => {
+        startScroll();
+      }, { passive: true });
+    }
+  }
 })();
+
 
 // ===== BAG DROP ANIMATION =====
 (function () {
@@ -292,4 +324,111 @@ console.log('%c👋 Hey there! Built with care by Subramaniyam M.', 'color:#f973
   }, { threshold: 0.35 });
 
   observer.observe(bagScene);
+})();
+
+
+// ===== EDUCATION SLIDER (3 Tabs + Left/Right Navigation Buttons) =====
+(function () {
+  const track = document.getElementById('eduSliderTrack');
+  const prevBtn = document.getElementById('eduPrevBtn');
+  const nextBtn = document.getElementById('eduNextBtn');
+  const tabs = document.querySelectorAll('.edu-tab');
+  const dots = document.querySelectorAll('.edu-dot');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const slides = track.querySelectorAll('.edu-slide');
+  const totalSlides = slides.length;
+
+  function getSlideStep() {
+    const firstSlide = track.querySelector('.edu-slide');
+    if (!firstSlide) return track.offsetWidth;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 28;
+    return firstSlide.offsetWidth + gap;
+  }
+
+  function updateActiveUI(index) {
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+
+    // Update tabs (when not in show-all mode)
+    if (!track.classList.contains('show-all')) {
+      tabs.forEach((tab) => {
+        const tabTarget = tab.dataset.index;
+        if (tabTarget === 'all') {
+          tab.classList.remove('active');
+        } else {
+          tab.classList.toggle('active', parseInt(tabTarget) === index);
+        }
+      });
+    }
+  }
+
+  function goToSlide(index) {
+    track.classList.remove('show-all');
+    const step = getSlideStep();
+    track.scrollTo({
+      left: index * step,
+      behavior: 'smooth'
+    });
+    updateActiveUI(index);
+  }
+
+  // Left (Previous) button
+  prevBtn.addEventListener('click', () => {
+    track.classList.remove('show-all');
+    const step = getSlideStep();
+    const currentIndex = Math.round(track.scrollLeft / step);
+    const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    goToSlide(prevIndex);
+  });
+
+  // Right (Next) button
+  nextBtn.addEventListener('click', () => {
+    track.classList.remove('show-all');
+    const step = getSlideStep();
+    const currentIndex = Math.round(track.scrollLeft / step);
+    const nextIndex = (currentIndex + 1) % totalSlides;
+    goToSlide(nextIndex);
+  });
+
+  // 3 Tabs click handling
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.index;
+      if (target === 'all') {
+        track.classList.add('show-all');
+        tabs.forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        const targetIndex = parseInt(target, 10);
+        goToSlide(targetIndex);
+      }
+    });
+  });
+
+  // Pagination dots click
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const targetIndex = parseInt(dot.dataset.index, 10);
+      goToSlide(targetIndex);
+    });
+  });
+
+  // Sync active states on manual scroll / swipe
+  let scrollTimer = null;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      if (!track.classList.contains('show-all')) {
+        const step = getSlideStep();
+        const activeIdx = Math.round(track.scrollLeft / step);
+        const clamped = Math.max(0, Math.min(totalSlides - 1, activeIdx));
+        updateActiveUI(clamped);
+      }
+    }, 50);
+  }, { passive: true });
 })();
